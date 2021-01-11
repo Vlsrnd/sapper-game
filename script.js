@@ -4,8 +4,11 @@ const root = document.getElementById('root');
 //16*30(99) 16*16(40) 9*9(10)
 
 const mainSettings = {
-  size: [9, 9],
-  count: 10,
+  size: {
+    row: 16,
+    column: 30,
+  },
+  count: 99,
   minefield: null,
   cellSize: {
     width: 20,
@@ -18,7 +21,7 @@ const generateMinefield = (settings) => {
   const {size, count} = settings;
   // debugger
   const indexes = [];
-  let arrLength = size[0] * size[1];
+  let arrLength = size.row * size.column;
   const flatArr = new Array(arrLength);
   while (arrLength > 0) {
     indexes.push(--arrLength);
@@ -28,11 +31,11 @@ const generateMinefield = (settings) => {
   flatArr.fill(0);
   minesIndexes.forEach(i => flatArr[i] = 'm');
   const newMinefield = [];
-  for (let i = 0; i < flatArr.length; i += size[1]) {
-    newMinefield.push(flatArr.slice(i, i + size[1]))
+  for (let i = 0; i < flatArr.length; i += size.column) {
+    newMinefield.push(flatArr.slice(i, i + size.column))
   }
-  for (let y = 0; y < size[0]; y++){
-    for (let x = 0; x < size[1]; x++) {
+  for (let y = 0; y < size.row; y++){
+    for (let x = 0; x < size.column; x++) {
       if (newMinefield[y][x] === 'm') continue;
       newMinefield[y][x] = [
         newMinefield[y - 1]?.[x - 1], newMinefield[y - 1]?.[x], newMinefield[y - 1]?.[x + 1],
@@ -106,7 +109,9 @@ const createElements = (settings) => {
 
 // const createGameArea = (settings) => {
 //   const gameArea = document.createElement('div');
-//   gameArea.classList.add('')
+//   gameArea.classList.add('game-area');
+
+  
 // };
 
 
