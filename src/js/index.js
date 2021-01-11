@@ -1,4 +1,6 @@
 'use strict';
+import '../css/style.css';
+import '../index.html';
 
 const root = document.getElementById('root');
 //16*30(99) 16*16(40) 9*9(10)
