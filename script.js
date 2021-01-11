@@ -107,19 +107,41 @@ const createElements = (settings) => {
   Array.from(settings.cells.values()).map(cell => cell.findNeighbors());
 };
 
-// const createGameArea = (settings) => {
-//   const gameArea = document.createElement('div');
-//   gameArea.classList.add('game-area');
+const createGameArea = (settings) => {
+  const gameArea = document.createElement('div');
+  gameArea.classList.add('game-area');
+  let linesCount = 0;
+  while (linesCount < settings.size.row) {
+    const line = document.createElement('div');
+    line.classList.add('line-element');
 
-  
-// };
-
+    Array.from(settings.cells.values())
+      .filter(cell => cell.y === linesCount)
+      .map(cell => {
+        cell.element.classList.add('cell-element');
+        line.append(cell.element)
+      });
+    gameArea.append(line);
+    linesCount++;
+  }
+  return gameArea;
+};
 
 // for init game
 generateMinefield(mainSettings);
 createElements(mainSettings);
+const gameArea = createGameArea(mainSettings);
+root.append(gameArea);
+
+gameArea.addEventListener('mousedown', (event) => {
+  event.preventDefault();
+});
+gameArea.addEventListener('mouseup', (event) => {
+  if (event.target.classList.contains('cell-element')){
+    mainSettings.cells.get(event.target).open();
+  }
+});
 //
-console.log(mainSettings.cells)
 
 
 
