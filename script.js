@@ -80,36 +80,40 @@ class Cell {
     this.neighbors = Array.from(this.cellsCollection.values())
       .filter(cell => {
         return (
-          (cell.y === this.y - 1 && cell.x === this.x - 1
-            || cell.y === this.y - 1 && cell.x === this.x
-            || cell.y === this.y - 1 && cell.x === this.x + 1)
-          || (cell.y === this.y && cell.x === this.x - 1
-            && cell.y === this.y && cell.x === this.x + 1)
-          || (cell.y === this.y + 1 && cell.x === this.x - 1
-            || cell.y === this.y + 1 && cell.x === this.x
-            || cell.y === this.y + 1 && cell.x === this.x + 1)
+          cell.y === this.y - 1 && cell.x === this.x - 1 
+          || cell.y === this.y - 1 && cell.x === this.x 
+          || cell.y === this.y - 1 && cell.x === this.x + 1
+          || cell.y === this.y && cell.x === this.x - 1
+          || cell.y === this.y && cell.x === this.x + 1
+          || cell.y === this.y + 1 && cell.x === this.x - 1
+          || cell.y === this.y + 1 && cell.x === this.x
+          || cell.y === this.y + 1 && cell.x === this.x + 1
         )
       })
   }
 };
 
-//for init game
-generateMinefield(mainSettings);
-//
-
 const createElements = (settings) => {
-  const {minefield, cells} = settings;
+  const {minefield} = settings;
   for (let y = 0; y < minefield.length; y++) {
     for (let x = 0; x < minefield[y].length; x++) {
       const newCell = new Cell({y: y, x: x}, minefield[y][x], settings);
       newCell.addToCollection();
     }
   }
+  Array.from(settings.cells.values()).map(cell => cell.findNeighbors());
 };
+
+// const createGameArea = (settings) => {
+//   const gameArea = document.createElement('div');
+//   gameArea.classList.add('')
+// };
+
+
 // for init game
+generateMinefield(mainSettings);
 createElements(mainSettings);
 //
-Array.from(mainSettings.cells.values()).map(cell => cell.findNeighbors())
 console.log(mainSettings.cells)
 
 
