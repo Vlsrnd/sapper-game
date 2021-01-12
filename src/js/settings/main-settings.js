@@ -28,7 +28,6 @@ export const mainSettings = {
   currentGame: {
     timer: null,
     minesCounter: null,
-    pauseButton
   },
 };
 

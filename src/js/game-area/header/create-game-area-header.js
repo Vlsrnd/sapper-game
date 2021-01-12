@@ -8,9 +8,9 @@ export const createGameAreaHeader = (settings) => {
   const pauseElement = createHeaderButton();
   const minesLeftElement = createHeaderButton();
   header.append(menuElement, timerElement, pauseElement, minesLeftElement);
-  settings.gameAreaHeaderElement.menu = menuElement;
-  settings.gameAreaHeaderElement.timer = timerElement;
-  settings.gameAreaHeaderElement.pause = pauseElement;
-  settings.gameAreaHeaderElement.minesLeft = minesLeftElement;
+  settings.gameAreaHeaderElements.menu = menuElement;
+  settings.gameAreaHeaderElements.timer = timerElement;
+  settings.gameAreaHeaderElements.pause = pauseElement;
+  settings.gameAreaHeaderElements.minesLeft = minesLeftElement;
   return header;
 };

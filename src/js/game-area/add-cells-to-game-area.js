@@ -1,5 +1,7 @@
 export const addCellsToGameArea = (settings) => {
   let linesCount = 0;
+  const newArea = document.createElement('div');
+  newArea.classList.add('area');
   while (linesCount < settings.size.row) {
     const line = document.createElement('div');
     line.classList.add('line-element');
@@ -10,7 +12,9 @@ export const addCellsToGameArea = (settings) => {
         cell.element.classList.add('cell-element');
         line.append(cell.element)
       });
-    settings.gameArea.append(line);
-    linesCount++;
-  }
+      newArea.append(line);
+      linesCount++;
+    }
+  settings.gameArea.querySelector('.area').remove();
+  settings.gameArea.append(newArea);
 };
