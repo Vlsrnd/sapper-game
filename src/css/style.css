@@ -75,6 +75,14 @@
   flex-direction: column;
   border: 5px solid black;
 }
+.game-area__header {
+  display: flex;
+  justify-content: space-between;
+}
+.game-area__header-button {
+  width: 40px;
+  height: 40px;
+}
 .line-element {
   display: flex;
 }

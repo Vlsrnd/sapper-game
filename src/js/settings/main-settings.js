@@ -19,9 +19,16 @@ export const mainSettings = {
     top16x16: (new Array(10)).fill([]),
     top16x30: (new Array(10)).fill([]),
   },
+  gameAreaHeaderElements: {
+    menu: null,
+    timer: null,
+    pause: null,
+    minesLeft: null,
+  },
   currentGame: {
     timer: null,
     minesCounter: null,
+    pauseButton
   },
 };
 
