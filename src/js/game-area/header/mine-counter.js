@@ -1,4 +1,4 @@
-export class minesCounter {
+export class MinesCounter {
   constructor(settings, element) {
     this.win = settings.winFunction;
     this.count = settings.minesCount;
