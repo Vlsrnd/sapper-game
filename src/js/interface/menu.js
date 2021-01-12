@@ -1,6 +1,3 @@
-//new game
-//settings
-//top 10 result
 export class Menu {
   constructor(settings){
     const menu = document.createElement('div');
@@ -23,7 +20,7 @@ export class Menu {
     this.structure = {
       main: [this.btn.newGame, this.btn.top10],
       newGame: [this.btn.newGame9x9, this.btn.newGame16x16, this.btn.newGame16x30, this.btn.back],
-      top10: [this.top10Structure],
+      top10: [this.top10Structure, this.btn.back],
     };
     
     this.mainElement = menu;
@@ -44,19 +41,19 @@ export class Menu {
     const createList = (name, arr) => {
       return (`<div class='list'><p>${name}</p>`
       + '<ul>'
-      + arr.map(e => `<li><span>${e[0] || '-'}</span><span>${e[1] || '-'}</span></li>`).join('')
+      + arr.map(e => `<li><span>${e[0] || '---'}</span><span>${e[1] || '---'}</span></li>`).join('')
       + '</ul></div>')
     };
-    const html = createList('9x9', this.settings.score.top9x9)
+    const html = `<div class='table'>`
+      + createList('9x9', this.settings.score.top9x9)
       + createList('16x16', this.settings.score.top16x16)
-      + createList('16x30', this.settings.score.top16x16);
+      + createList('16x30', this.settings.score.top16x16)
+      + `</div>`;
     topElement.innerHTML = html;
-    topElement.append(this.btn.back);
     return topElement;
   }
   switchMenu = (position) => {
     this.mainElement.innerHTML = '';
     this.structure[position].forEach(button => this.mainElement.append(button));
   }
-
 }
