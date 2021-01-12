@@ -21,7 +21,7 @@ const listenersInit = () => {
     if (event.button === 0) {
       mainSettings.cells.get(event.target).open();
     } else if (event.button === 2) {
-      return  
+      mainSettings.cells.get(event.target).toggleFlag();
     }
   });
 };

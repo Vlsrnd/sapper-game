@@ -8,6 +8,7 @@ export class Cell {
     this.neighbors = [];
     this.element = this.create();
     this.isClosed = true;
+    this.isFlagged = false;
   }
   create = () => {
     const cellElement = document.createElement('div');
@@ -18,21 +19,6 @@ export class Cell {
   }
   addToCollection = () => {
     this.cellsCollection.set(this.element, this);
-  }
-  open = () => {
-    this.isClosed = false;
-    if (this.value === 'm') this.element.classList.add('cell-mine');
-    else if (this.value === 0) {
-      this.element.classList.add('cell-empty');
-      this.neighbors.forEach(cell => {
-        const neighbor = this.cellsCollection.get(cell.element);
-        if (neighbor.isClosed) neighbor.open();
-      })
-    }
-    else {
-      this.element.textContent = this.value;
-      this.element.classList.add('cell-num');
-    }
   }
   append = (destination) => {
     destination.append(this.element);
@@ -51,5 +37,27 @@ export class Cell {
           || cell.y === this.y + 1 && cell.x === this.x + 1
         )
       })
+  }
+  open = () => {
+    if (!this.isClosed) return;
+    if (this.isFlagged) this.toggleFlag();
+    this.isClosed = false;
+    if (this.value === 'm') this.element.classList.add('cell-mine');
+    else if (this.value === 0) {
+      this.element.classList.add('cell-empty');
+      this.neighbors.forEach(cell => {
+        const neighbor = this.cellsCollection.get(cell.element);
+        if (neighbor.isClosed) neighbor.open();
+      })
+    }
+    else {
+      this.element.textContent = this.value;
+      this.element.classList.add('cell-num');
+    }
+  }
+  toggleFlag = () => {
+    if (!this.isClosed) return;
+    this.isFlagged = !this.isFlagged;
+    this.element.classList.toggle('cell-flag');
   }
 };
