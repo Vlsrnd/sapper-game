@@ -1,13 +1,13 @@
 'use strict';
 import '../css/style.css';
 import '../index.html';
-import { createElements } from './create-elements';
-import { createGameArea } from "./create-game-area";
-import { generateMinefield } from "./generate-mine-field";
-import { setSettings } from "./set-settings";
-import { mainSettings } from './main-settings';
+import { createElements } from './game-area/create-elements';
+import { createGameArea } from "./game-area/create-game-area";
+import { generateMinefield } from "./game-area/generate-mine-field";
+import { setSettings } from "./settings/set-settings";
+import { mainSettings } from './settings/main-settings';
 import { Menu } from './interface/menu';
-import { addCellsToGameArea } from './add-cells-to-game-area';
+import { addCellsToGameArea } from './game-area/add-cells-to-game-area';
 
 const root = document.getElementById('root');
 

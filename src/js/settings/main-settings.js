@@ -17,5 +17,9 @@ export const mainSettings = {
     top16x16: (new Array(10)).fill([]),
     top16x30: (new Array(10)).fill([]),
   },
+  currentGame: {
+    timer: 0,
+    minesLeft: 0,
+  }
 };
 
