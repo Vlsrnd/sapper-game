@@ -27,6 +27,9 @@ body {
   background-color: #333;
   border: 1px solid black;
 }
+.cell-element:hover {
+  background-color: #555;
+}
 
 .cell-mine {
   background-color: red;
