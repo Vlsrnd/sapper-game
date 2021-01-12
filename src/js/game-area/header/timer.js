@@ -11,6 +11,7 @@ export class Timer {
       this.timerId = setTimeout(() => this.start(), 1000);
       return;
     }
+    if (this.time >= 999) this.pause();
     this.time++;
     this.updateElement();
     this.timerId = setTimeout(() => this.start(), 1000);
@@ -20,6 +21,10 @@ export class Timer {
     clearTimeout(this.timerId);
   }
   updateElement = () => {
-    this.element.textContent = this.time;
+    this.element.textContent = this.time < 10 
+      ? '00' + this.time
+      : this.time < 100 
+      ? '0' + this.time
+      : this.time;
   }
 };
