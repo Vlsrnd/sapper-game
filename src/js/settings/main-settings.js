@@ -12,14 +12,16 @@ export const mainSettings = {
   cells: new Map(),
   gameArea: null,
   menu: null,
+  winFunction: () => alert('you win'),
+  loseFunction: () => alert('you lose'),
   score: {
     top9x9: (new Array(10)).fill([]),
     top16x16: (new Array(10)).fill([]),
     top16x30: (new Array(10)).fill([]),
   },
   currentGame: {
-    timer: 0,
-    minesLeft: 0,
-  }
+    timer: null,
+    minesCounter: null,
+  },
 };
 
