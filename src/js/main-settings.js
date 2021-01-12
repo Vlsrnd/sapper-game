@@ -10,6 +10,8 @@ export const mainSettings = {
     height: 20,
   },
   cells: new Map(),
+  gameArea: null,
+  menu: null,
   score: {
     top9x9: (new Array(10)).fill([]),
     top16x16: (new Array(10)).fill([]),
