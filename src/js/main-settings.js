@@ -3,7 +3,7 @@ export const mainSettings = {
     row: 16,
     column: 30,
   },
-  count: 99,
+  minesCount: 99,
   minefield: null,
   cellSize: {
     width: 20,

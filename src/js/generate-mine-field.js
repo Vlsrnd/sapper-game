@@ -1,5 +1,5 @@
 export const generateMinefield = (settings) => {
-  const {size, count} = settings;
+  const {size, minesCount} = settings;
   const indexes = [];
   let arrLength = size.row * size.column;
   const flatArr = new Array(arrLength);
@@ -7,7 +7,7 @@ export const generateMinefield = (settings) => {
     indexes.push(--arrLength);
   };
   const minesIndexes = indexes.sort(() => Math.random() - 0.5);
-  minesIndexes.length = count;
+  minesIndexes.length = minesCount;
   flatArr.fill(0);
   minesIndexes.forEach(i => flatArr[i] = 'm');
   const newMinefield = [];

@@ -26,9 +26,6 @@ export class Menu {
     this.mainElement = menu;
     this.switchMenu('main');
   }
-  append = (destination) => {
-    destination.append(this.mainElement);
-  }
   createBtn = (text) => {
     const newBtn = document.createElement('button');
     newBtn.classList.add('menu__btn');

@@ -1,34 +1,38 @@
 'use strict';
 import '../css/style.css';
 import '../index.html';
-import { createGameArea } from './create-game-area';
 import { createElements } from './create-elements';
-import { generateMinefield } from './generate-mine-field';
+import { createGameArea } from "./create-game-area";
+import { generateMinefield } from "./generate-mine-field";
+import { setSettings } from "./set-settings";
 import { mainSettings } from './main-settings';
 import { Menu } from './interface/menu';
 
 const root = document.getElementById('root');
-//16*30(99) 16*16(40) 9*9(10)
 
 const menu = new Menu(mainSettings);
-menu.append(root)
+root.append(menu.mainElement);
+
+const gameInit = (row, column, minesCount, settings) => {
+  setSettings(row, column, minesCount, settings);
+  generateMinefield(settings);
+  createElements(settings);
+  root.innerHTML = '';
+  root.append(createGameArea(settings));
+};
+
+menu.btn.newGame9x9.onclick = () => gameInit(9, 9, 10, mainSettings);
+menu.btn.newGame16x16.onclick = () => gameInit(16, 16, 40, mainSettings);
+menu.btn.newGame16x30.onclick = () => gameInit(16, 30, 99, mainSettings);
+
+document.addEventListener('mousedown', (event) => event.preventDefault());
+document.addEventListener('mouseup', (event) => {
+  if (event.target.classList.contains('cell-element')) {
+    mainSettings.cells.get(event.target).open();
+  }
+});
+
+//Only for dev
 window.menu = menu;
-
-
-
-
-
-// generateMinefield(mainSettings);
-// createElements(mainSettings);
-// const gameArea = createGameArea(mainSettings);
-// root.append(gameArea);
-
-// gameArea.addEventListener('mousedown', (event) => {
-  // event.preventDefault();
-// });
-
-// gameArea.addEventListener('mouseup', (event) => {
-  // if (event.target.classList.contains('cell-element')){
-    // mainSettings.cells.get(event.target).open();
-  // }
-// });
+window.mainSettings = mainSettings;
+//
