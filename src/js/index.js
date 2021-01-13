@@ -12,6 +12,7 @@ import { Timer } from './game-area/header/timer';
 import { MinesCounter } from './game-area/header/mines-counter';
 import { pausePlay } from './game/pause-play';
 import { openMenu } from './game/open-menu';
+import { backToGame } from './game/back-to-game';
 
 const root = document.getElementById('root');
 
@@ -67,6 +68,7 @@ window.addEventListener('load', () => {
   mainSettings.menu.btn.newGame9x9.onclick = () => gameStart(9, 9, 10, mainSettings);
   mainSettings.menu.btn.newGame16x16.onclick = () => gameStart(16, 16, 40, mainSettings);
   mainSettings.menu.btn.newGame16x30.onclick = () => gameStart(16, 30, 99, mainSettings);
+  mainSettings.menu.btn.backToGame.onclick = () => backToGame(mainSettings);
 });
 
 const gameStart = (row, column, minesCount, settings) => {

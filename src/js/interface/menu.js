@@ -11,6 +11,7 @@ export class Menu {
       newGame16x30: this.createBtn('16x30'),
       top10: this.createBtn('top 10 result'),
       back: this.createBtn('back'),
+      backToGame: this.createBtn('back to game'),
     };
     this.btn.newGame.onclick = () => this.switchMenu('newGame');
     this.btn.top10.onclick = () => this.switchMenu('top10');
@@ -52,5 +53,6 @@ export class Menu {
   switchMenu = (position) => {
     this.mainElement.innerHTML = '';
     this.structure[position].forEach(button => this.mainElement.append(button));
+    if (this.settings.currentGame.isRun) this.mainElement.append(this.btn.backToGame);
   }
 }
