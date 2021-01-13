@@ -16,12 +16,13 @@ import { timerInit } from './init/timer-init';
 import { minesCounterInit } from './init/mines-counter-init';
 import { countClosedCells } from './game/count-closed-cells';
 import { checkIsDoubleButtonClickCreator } from './init/check-is-double-button-click-creator';
+import { loadScore } from './init/load-score';
 
 const root = document.getElementById('root');
-
 document.addEventListener('mousedown', (event) => event.preventDefault());
 document.addEventListener('contextmenu', (event) => event.preventDefault());
 document.addEventListener('mouseup', (event) => event.preventDefault());
+
 
 const listenersInit = () => {
   const checkIsDoubleButtonClick = checkIsDoubleButtonClickCreator(mainSettings);
@@ -47,7 +48,9 @@ const listenersInit = () => {
   });
 };
 
-const gameInit = (settings) => {
+const gameInit = async (settings) => {
+  debugger;
+  let mainSettings = await loadScore(settings);
   mainSettings.menu = new Menu(mainSettings);
   root.append(mainSettings.menu.mainElement);
   settings.gameArea = createGameArea(settings);
@@ -57,10 +60,10 @@ const gameInit = (settings) => {
 
 window.addEventListener('load', () => {
   gameInit(mainSettings);
-  mainSettings.menu.btn.newGame9x9.onclick = () => gameStart(9, 9, 10, mainSettings);
-  mainSettings.menu.btn.newGame16x16.onclick = () => gameStart(16, 16, 40, mainSettings);
-  mainSettings.menu.btn.newGame16x30.onclick = () => gameStart(16, 30, 99, mainSettings);
-  mainSettings.menu.btn.backToGame.onclick = () => backToGame(mainSettings);
+  // mainSettings.menu.btn.newGame9x9.onclick = () => gameStart(9, 9, 10, mainSettings);
+  // mainSettings.menu.btn.newGame16x16.onclick = () => gameStart(16, 16, 40, mainSettings);
+  // mainSettings.menu.btn.newGame16x30.onclick = () => gameStart(16, 30, 99, mainSettings);
+  // mainSettings.menu.btn.backToGame.onclick = () => backToGame(mainSettings);
 });
 
 const gameStart = (row, column, minesCount, settings) => {
