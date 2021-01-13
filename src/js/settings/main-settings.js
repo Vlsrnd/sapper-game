@@ -4,6 +4,7 @@ export const mainSettings = {
     column: 30,
   },
   minesCount: 99,
+  closedMinesCount: 99,
   minefield: null,
   cellSize: {
     width: 20,
@@ -17,7 +18,7 @@ export const mainSettings = {
   score: {
     top9x9: (new Array(10)).fill([]),
     top16x16: (new Array(10)).fill([]),
-    top16x30: (new Array(10)).fill([]),
+    top16x30: (new Array(10)).fill([]), 
   },
   gameAreaHeaderElements: {
     menu: null,

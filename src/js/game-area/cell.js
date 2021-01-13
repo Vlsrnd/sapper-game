@@ -9,6 +9,7 @@ export class Cell {
     this.element = this.create();
     this.isClosed = true;
     this.isFlagged = false;
+    this.mainSettings = settings;
   }
   create = () => {
     const cellElement = document.createElement('div');
@@ -38,12 +39,20 @@ export class Cell {
         )
       })
   }
-  open = () => {
+  open = (force) => {
+    if (!this.isClosed && force) {
+      this.neighbors
+        .filter(cell => cell.isClosed)
+        .filter(cell => !cell.isFlagged)
+        .forEach(cell => cell.open());
+    }
     if (!this.isClosed) return;
     if (this.isFlagged) this.toggleFlag();
     this.isClosed = false;
-    if (this.value === 'm') this.element.classList.add('cell-mine');
-    else if (this.value === 0) {
+    if (this.value === 'm') {
+      this.element.classList.add('cell-mine');
+      this.mainSettings.loseFunction();
+    } else if (this.value === 0) {
       this.element.classList.add('cell-empty');
       this.neighbors.forEach(cell => {
         const neighbor = this.cellsCollection.get(cell.element);
