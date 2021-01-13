@@ -2,7 +2,6 @@ export class Cell {
   constructor(position, value, settings) {
     this.x = position.x;
     this.y = position.y;
-    this.cellSize = settings.cellSize;
     this.value = value;
     this.cellsCollection = settings.cells;
     this.neighbors = [];
@@ -13,8 +12,6 @@ export class Cell {
   }
   create = () => {
     const cellElement = document.createElement('div');
-    cellElement.style.width = this.cellSize.width + 'px';
-    cellElement.style.height = this.cellSize.height + 'px';
     cellElement.classList.add('cell-element');
     return cellElement;
   }

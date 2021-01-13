@@ -6,10 +6,6 @@ export const mainSettings = {
   minesCount: 99,
   closedMinesCount: 99,
   minefield: null,
-  cellSize: {
-    width: 20,
-    height: 20,
-  },
   cells: new Map(),
   gameArea: null,
   menu: null,
