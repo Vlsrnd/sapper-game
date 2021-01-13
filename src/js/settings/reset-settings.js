@@ -1,0 +1,8 @@
+export const resetSettings = (settings) => {
+  settings.minefield = null;
+  settings.cells.clear();
+  settings.currentGame.isRun = false;
+  settings.currentGame.isPaused = true;
+  settings.currentGame.timer = null;
+  settings.currentGame.minesCounter = null;
+};

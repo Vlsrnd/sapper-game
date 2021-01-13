@@ -10,7 +10,7 @@ export class MinesCounter {
     if (this.count <= 0) this.win();
     this.updateElement();
   }
-  increas = () => {
+  increase = () => {
     this.count++;
     this.updateElement();
   }

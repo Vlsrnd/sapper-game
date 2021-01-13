@@ -8,11 +8,13 @@ import { setSettings } from "./settings/set-settings";
 import { mainSettings } from './settings/main-settings';
 import { Menu } from './interface/menu';
 import { addCellsToGameArea } from './game-area/add-cells-to-game-area';
-import { Timer } from './game-area/header/timer';
-import { MinesCounter } from './game-area/header/mines-counter';
 import { pausePlay } from './game/pause-play';
 import { openMenu } from './game/open-menu';
 import { backToGame } from './game/back-to-game';
+import { resetSettings } from './settings/reset-settings';
+import { timerInit } from './init/timer-init';
+import { minesCounterInit } from './init/mines-counter-init';
+import { countClosedCells } from './game/count-closed-cells';
 
 const root = document.getElementById('root');
 
@@ -33,11 +35,9 @@ const listenersInit = () => {
     }
   });
   mainSettings.gameArea.addEventListener('click', (event) => {
-    if (event.target === mainSettings.gameAreaHeaderElements.pause) {
-      pausePlay(mainSettings, event.target);
-    } else if (event.target === mainSettings.gameAreaHeaderElements.menu) {
-      openMenu(mainSettings);
-    }
+    const {pause, menu} = mainSettings.gameAreaHeaderElements; 
+    if (event.target === pause) pausePlay(mainSettings, event.target);
+    else if (event.target === menu) openMenu(mainSettings);
   });
 };
 
@@ -49,28 +49,6 @@ const gameInit = (settings) => {
   listenersInit();
 };
 
-const timerInit = (settings) => {
-  settings.currentGame.timer = new Timer(settings, 
-    settings.gameAreaHeaderElements.timer);
-  settings.currentGame.timer.start();
-  return settings;
-};
-
-const minesCounterInit = (settings) => {
-  settings.currentGame.minesCounter = new MinesCounter(settings, 
-    settings.gameAreaHeaderElements.minesLeft);
-  return settings;
-};
-
-const clearSettings = (settings) => {
-  settings.minefield = null;
-  settings.cells.clear();
-  settings.currentGame.isRun = false;
-  settings.currentGame.isPaused = true;
-  settings.currentGame.timer = null;
-  settings.currentGame.minesCounter = null;
-};
-
 window.addEventListener('load', () => {
   gameInit(mainSettings);
   mainSettings.menu.btn.newGame9x9.onclick = () => gameStart(9, 9, 10, mainSettings);
@@ -80,7 +58,7 @@ window.addEventListener('load', () => {
 });
 
 const gameStart = (row, column, minesCount, settings) => {
-  if (settings.currentGame.isRun) clearSettings(settings);
+  if (settings.currentGame.isRun) resetSettings(settings);
   setSettings(row, column, minesCount, settings);
   generateMinefield(settings);
   createElements(settings);
@@ -94,4 +72,5 @@ const gameStart = (row, column, minesCount, settings) => {
 
 //Only for dev
 window.mainSettings = mainSettings;
+window.count = countClosedCells;
 //
