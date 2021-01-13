@@ -9,6 +9,7 @@ import { mainSettings } from './settings/main-settings';
 import { Menu } from './interface/menu';
 import { addCellsToGameArea } from './game-area/add-cells-to-game-area';
 import { Timer } from './game-area/header/timer';
+import { MinesCounter } from './game-area/header/mines-counter';
 
 const root = document.getElementById('root');
 
@@ -19,10 +20,13 @@ document.addEventListener('mouseup', (event) => event.preventDefault());
 const listenersInit = () => {
   mainSettings.gameArea.addEventListener('mouseup', (event) => {
     if (!event.target.classList.contains('cell-element')) return;
+    const cell = mainSettings.cells.get(event.target);
     if (event.button === 0) {
-      mainSettings.cells.get(event.target).open();
+      cell.open();
     } else if (event.button === 2) {
-      mainSettings.cells.get(event.target).toggleFlag();
+      cell.toggleFlag();
+      if (cell.isFlagged) mainSettings.currentGame.minesCounter.decrease();
+      else mainSettings.currentGame.minesCounter.increase();
     }
   });
 };
@@ -36,9 +40,24 @@ const gameInit = (settings) => {
 };
 
 const timerInit = (settings) => {
-  settings.currentGame.timer = new Timer(settings.gameAreaHeaderElements.timer);
+  settings.currentGame.timer = new Timer(settings, 
+    settings.gameAreaHeaderElements.timer);
   settings.currentGame.timer.start();
+  return settings;
 };
+
+const minesCounterInit = (settings) => {
+  settings.currentGame.minesCounter = new MinesCounter(settings, 
+    settings.gameAreaHeaderElements.minesLeft);
+  return settings;
+};
+
+// const pauseButtonInit = (settings) => {
+  // 
+  // pauseBtn.addEventListener('click', () => {
+    // tog
+  // });
+// };
 
 window.addEventListener('load', () => {
   gameInit(mainSettings);
@@ -55,6 +74,7 @@ const gameStart = (row, column, minesCount, settings) => {
   settings.menu.mainElement.classList.add('hide');
   settings.gameArea.classList.remove('hide');
   timerInit(settings);
+  minesCounterInit(settings, );
 };
 
 //Only for dev

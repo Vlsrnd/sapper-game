@@ -8,6 +8,7 @@ export const createGameAreaHeader = (settings) => {
   const timerElement = createHeaderButton();
   timerElement.classList.add('timer-icon');
   timerElement.textContent = '000';
+  
   const pauseElement = createHeaderButton();
   pauseElement.classList.add('pause-icon');
   const minesLeftElement = createHeaderButton();
