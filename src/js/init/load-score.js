@@ -1,5 +1,9 @@
 export const loadScore = (settings) => {
-  if (!localStorage.getItem('score')) return;
-  settings.score = localStorage.getItem('score');
-  return settings;
+  return new Promise(resolve => {
+  if (!localStorage.getItem('score')) resolve(settings);
+  else {
+    settings.score = localStorage.getItem('score');
+    resolve(settings);
+  }
+  });
 };

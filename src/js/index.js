@@ -56,17 +56,20 @@ const onclickInit = (settings) => {
 };
 
 const gameInit = (settings) => {
-  // let mainSettings = loadScore(settings);
-  mainSettings.menu = new Menu(settings);
-  root.append(settings.menu.mainElement);
-  settings.gameArea = createGameArea(settings);
-  root.append(settings.gameArea);
-  listenersInit();
+  loadScore(settings)
+    .then(settings => {
+      settings.menu = new Menu(settings);
+      root.append(settings.menu.mainElement);
+      settings.gameArea = createGameArea(settings);
+      root.append(settings.gameArea);
+      listenersInit();
+      onclickInit(settings);
+    });
 };
 
 window.addEventListener('load', () => {
   gameInit(mainSettings);
-  onclickInit(mainSettings);
+  // onclickInit(mainSettings);
 });
 
 const gameStart = (row, column, minesCount, settings) => {
