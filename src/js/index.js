@@ -62,6 +62,14 @@ const minesCounterInit = (settings) => {
   return settings;
 };
 
+const clearSettings = (settings) => {
+  settings.minefield = null;
+  settings.cells.clear();
+  settings.currentGame.isRun = false;
+  settings.currentGame.isPaused = true;
+  settings.currentGame.timer = null;
+  settings.currentGame.minesCounter = null;
+};
 
 window.addEventListener('load', () => {
   gameInit(mainSettings);
@@ -72,6 +80,7 @@ window.addEventListener('load', () => {
 });
 
 const gameStart = (row, column, minesCount, settings) => {
+  if (settings.currentGame.isRun) clearSettings(settings);
   setSettings(row, column, minesCount, settings);
   generateMinefield(settings);
   createElements(settings);
