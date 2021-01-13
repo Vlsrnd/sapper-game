@@ -48,11 +48,17 @@ const listenersInit = () => {
   });
 };
 
-const gameInit = async (settings) => {
-  debugger;
-  let mainSettings = await loadScore(settings);
-  mainSettings.menu = new Menu(mainSettings);
-  root.append(mainSettings.menu.mainElement);
+const onclickInit = (settings) => {
+  mainSettings.menu.btn.newGame9x9.onclick = () => gameStart(9, 9, 10, settings);
+  mainSettings.menu.btn.newGame16x16.onclick = () => gameStart(16, 16, 40, settings);
+  mainSettings.menu.btn.newGame16x30.onclick = () => gameStart(16, 30, 99, settings);
+  mainSettings.menu.btn.backToGame.onclick = () => backToGame(settings);
+};
+
+const gameInit = (settings) => {
+  // let mainSettings = loadScore(settings);
+  mainSettings.menu = new Menu(settings);
+  root.append(settings.menu.mainElement);
   settings.gameArea = createGameArea(settings);
   root.append(settings.gameArea);
   listenersInit();
@@ -60,10 +66,7 @@ const gameInit = async (settings) => {
 
 window.addEventListener('load', () => {
   gameInit(mainSettings);
-  // mainSettings.menu.btn.newGame9x9.onclick = () => gameStart(9, 9, 10, mainSettings);
-  // mainSettings.menu.btn.newGame16x16.onclick = () => gameStart(16, 16, 40, mainSettings);
-  // mainSettings.menu.btn.newGame16x30.onclick = () => gameStart(16, 30, 99, mainSettings);
-  // mainSettings.menu.btn.backToGame.onclick = () => backToGame(mainSettings);
+  onclickInit(mainSettings);
 });
 
 const gameStart = (row, column, minesCount, settings) => {

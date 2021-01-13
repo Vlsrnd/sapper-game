@@ -1,5 +1,5 @@
-export const loadScore = async (settings) => {
-  if (!localStorage.get('score')) return;
-  settings.score = await localStorage.get('score');
+export const loadScore = (settings) => {
+  if (!localStorage.getItem('score')) return;
+  settings.score = localStorage.getItem('score');
   return settings;
 };
