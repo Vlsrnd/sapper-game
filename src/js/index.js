@@ -10,6 +10,7 @@ import { Menu } from './interface/menu';
 import { addCellsToGameArea } from './game-area/add-cells-to-game-area';
 import { Timer } from './game-area/header/timer';
 import { MinesCounter } from './game-area/header/mines-counter';
+import { pausePlay } from './game/pause-play';
 
 const root = document.getElementById('root');
 
@@ -27,6 +28,13 @@ const listenersInit = () => {
       cell.toggleFlag();
       if (cell.isFlagged) mainSettings.currentGame.minesCounter.decrease();
       else mainSettings.currentGame.minesCounter.increase();
+    }
+  });
+  mainSettings.gameArea.addEventListener('click', (event) => {
+    if (event.target === mainSettings.gameAreaHeaderElements.pause) {
+      pausePlay(mainSettings, event.target);
+    } else if (event.target === mainSettings.gameAreaHeaderElements.menu) {
+      alert('menu is open');
     }
   });
 };
@@ -52,12 +60,6 @@ const minesCounterInit = (settings) => {
   return settings;
 };
 
-// const pauseButtonInit = (settings) => {
-  // 
-  // pauseBtn.addEventListener('click', () => {
-    // tog
-  // });
-// };
 
 window.addEventListener('load', () => {
   gameInit(mainSettings);

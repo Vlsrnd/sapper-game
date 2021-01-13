@@ -83,6 +83,14 @@
   width: 40px;
   height: 40px;
 }
+.start-icon {
+  content: 'start';
+  background-color: #777;
+}
+.pause-icon {
+  content: 'pause';
+  background-color: #333;
+}
 .line-element {
   display: flex;
 }
