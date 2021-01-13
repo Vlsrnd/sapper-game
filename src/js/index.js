@@ -28,6 +28,8 @@ const listenersInit = () => {
     const cell = mainSettings.cells.get(event.target);
     if (event.button === 0) {
       cell.open();
+    } else if (event.button === 1) {
+      cell.open(true);
     } else if (event.button === 2) {
       cell.toggleFlag();
       if (cell.isFlagged) mainSettings.currentGame.minesCounter.decrease();
