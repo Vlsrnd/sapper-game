@@ -15,6 +15,7 @@ import { resetSettings } from './settings/reset-settings';
 import { timerInit } from './init/timer-init';
 import { minesCounterInit } from './init/mines-counter-init';
 import { countClosedCells } from './game/count-closed-cells';
+import { checkIsDoubleButtonClickCreator } from './init/check-is-double-button-click-creator';
 
 const root = document.getElementById('root');
 
@@ -23,6 +24,9 @@ document.addEventListener('contextmenu', (event) => event.preventDefault());
 document.addEventListener('mouseup', (event) => event.preventDefault());
 
 const listenersInit = () => {
+  const checkIsDoubleButtonClick = checkIsDoubleButtonClickCreator(mainSettings);
+  mainSettings.gameArea.addEventListener('mousedown', (event) => checkIsDoubleButtonClick(event));
+  mainSettings.gameArea.addEventListener('mouseup', (event) => checkIsDoubleButtonClick(event));
   mainSettings.gameArea.addEventListener('mouseup', (event) => {
     if (!event.target.classList.contains('cell-element')) return;
     const cell = mainSettings.cells.get(event.target);
