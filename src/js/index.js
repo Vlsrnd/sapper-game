@@ -11,6 +11,7 @@ import { addCellsToGameArea } from './game-area/add-cells-to-game-area';
 import { Timer } from './game-area/header/timer';
 import { MinesCounter } from './game-area/header/mines-counter';
 import { pausePlay } from './game/pause-play';
+import { openMenu } from './game/open-menu';
 
 const root = document.getElementById('root');
 
@@ -34,7 +35,7 @@ const listenersInit = () => {
     if (event.target === mainSettings.gameAreaHeaderElements.pause) {
       pausePlay(mainSettings, event.target);
     } else if (event.target === mainSettings.gameAreaHeaderElements.menu) {
-      alert('menu is open');
+      openMenu(mainSettings);
     }
   });
 };
@@ -73,10 +74,11 @@ const gameStart = (row, column, minesCount, settings) => {
   generateMinefield(settings);
   createElements(settings);
   addCellsToGameArea(settings);
+  settings.currentGame.isRun = true;
   settings.menu.mainElement.classList.add('hide');
   settings.gameArea.classList.remove('hide');
   timerInit(settings);
-  minesCounterInit(settings, );
+  minesCounterInit(settings);
 };
 
 //Only for dev
