@@ -65,7 +65,7 @@ export class Cell {
     }
   }
   toggleFlag = () => {
-    if (!this.isClosed) return;
+    if (!this.isClosed) debugger;
     this.isFlagged = !this.isFlagged;
     this.element.classList.toggle('cell-flag');
   }
