@@ -1,4 +1,5 @@
 export const animationCreator = (coord, speed, settings) => {
+  settings.canvas.classList.remove('hide');
   const ctx = settings.canvas.getContext('2d');
   return function animation() {
     ctx.clearRect(0, 0, settings.canvas.width, settings.canvas.height);

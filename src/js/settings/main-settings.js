@@ -30,5 +30,6 @@ export const mainSettings = {
     minesCounter: null,
     closedMinesCount: null,
   },
+  winAnimationSettings: null,
 };
 

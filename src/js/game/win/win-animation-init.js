@@ -6,7 +6,7 @@ export const winAnimationInit = (destination) => {
   const canvas = document.createElement('canvas');
   canvas.setAttribute('height', h);
   canvas.setAttribute('width', w);
-  canvas.classList.add('win-animation-canvas');
+  canvas.classList.add('win-animation-canvas', 'hide');
   destination.append(canvas);
   const animationSettings = generateCoordAndParticles(canvas, 'WIN', 3, w, h);
   canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);

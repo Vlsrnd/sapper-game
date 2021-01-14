@@ -15,8 +15,9 @@ import { countClosedCells } from './game/count-closed-cells';
 import { loadScore } from './init/load-score';
 import { onclickInit } from './init/onclick-init';
 import { listenersInit } from './init/listeners-init';
-import { win } from './game/win';
+import { win } from './game/win/win';
 import { lose } from './game/lose';
+import { winAnimationInit } from './game/win/win-animation-init';
 
 window.mainSettings = mainSettings;
 const root = document.getElementById('root');
@@ -53,6 +54,7 @@ const gameInit = (settings) => {
 
 window.addEventListener('load', () => {
   gameInit(mainSettings);
+  mainSettings.winAnimationSettings = winAnimationInit(root);
 });
 
 //Only for dev
