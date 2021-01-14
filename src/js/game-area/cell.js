@@ -65,8 +65,14 @@ export class Cell {
     }
   }
   toggleFlag = () => {
-    if (!this.isClosed) debugger;
-    this.isFlagged = !this.isFlagged;
+    if (!this.isClosed) return;
+    if (this.isFlagged) {
+      this.isFlagged = false;
+      this.mainSettings.currentGame.minesCounter.increase();
+    } else {
+      this.isFlagged = true;
+      this.mainSettings.currentGame.minesCounter.decrease();
+    }
     this.element.classList.toggle('cell-flag');
   }
 };

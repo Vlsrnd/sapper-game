@@ -15,9 +15,6 @@ export const listenersInit = (settings) => {
       cell.open(true);
     } else if (event.button === 2) {
       cell.toggleFlag();
-      //fix bug
-      if (cell.isFlagged) settings.currentGame.minesCounter.decrease();
-      else settings.currentGame.minesCounter.increase();
     }
   });
   settings.gameArea.addEventListener('click', (event) => {
