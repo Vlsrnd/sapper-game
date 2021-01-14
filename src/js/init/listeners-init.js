@@ -1,6 +1,8 @@
 import { pausePlay } from '../game/pause-play';
 import { checkIsDoubleButtonClickCreator } from './check-is-double-button-click-creator';
 import { openMenu } from '../game/open-menu';
+import { checkAmIWin } from '../game/check-am-i-win';
+import { mainSettings } from '../settings/main-settings';
 
 export const listenersInit = (settings) => {
   const checkIsDoubleButtonClick = checkIsDoubleButtonClickCreator(settings);
@@ -17,6 +19,7 @@ export const listenersInit = (settings) => {
     } else if (event.button === 2) {
       cell.toggleFlag();
     }
+    checkAmIWin(mainSettings);
   });
   settings.gameArea.addEventListener('click', (event) => {
     const {pause, menu} = settings.gameAreaHeaderElements; 

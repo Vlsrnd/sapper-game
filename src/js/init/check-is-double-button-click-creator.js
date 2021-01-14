@@ -1,4 +1,4 @@
-import { countClosedCells } from "../game/count-closed-cells";
+import { checkAmIWin } from "../game/check-am-i-win";
 
 export const checkIsDoubleButtonClickCreator = (settings) => {
   let left = false, right = false;
@@ -7,7 +7,6 @@ export const checkIsDoubleButtonClickCreator = (settings) => {
     if (event.button === 0) left = !left;
     if (event.button === 2) right = !right;
     if (left && right) settings.cells.get(event.target).open(true);
-    countClosedCells(settings)
-    if (settings.currentGame.closedMinesCount === settings.minesCount) settings.winFunction();
+    checkAmIWin(settings);
   };
 };
