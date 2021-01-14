@@ -12,5 +12,6 @@ export const showAddScoreForm = (settings, destination) => {
   form.style.top = destination.clientHeight / 2 - form.clientHeight / 2 + 'px';
   form.style.left = destination.clientWidth / 2 - form.clientWidth / 2 + 'px';
   form.classList.remove('invisible');
+  form.querySelector('input').focus();
   form.onsubmit = addScoreToTopCreator(settings);
 };

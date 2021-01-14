@@ -39,18 +39,16 @@ const gameStart = (row, column, minesCount, settings) => {
   settings.winAnimationSettings = winAnimationInit(root);
 };
 
-const gameInit = (settings) => {
-  loadScore(settings)
-    .then(settings => {
-      settings.winFunction = win(settings);
-      settings.loseFunction = lose(settings);
-      settings.menu = new Menu(settings);
-      root.append(settings.menu.mainElement);
-      settings.gameArea = createGameArea(settings);
-      root.append(settings.gameArea);
-      listenersInit(settings);
-      onclickInit(settings, gameStart);
-    });
+const gameInit = async (settings) => {
+  settings.score = await loadScore(settings);
+  settings.winFunction = win(settings);
+  settings.loseFunction = lose(settings);
+  settings.menu = new Menu(settings);
+  root.append(settings.menu.mainElement);
+  settings.gameArea = createGameArea(settings);
+  root.append(settings.gameArea);
+  listenersInit(settings);
+  onclickInit(settings, gameStart);
 };
 
 window.addEventListener('load', () => {

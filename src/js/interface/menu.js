@@ -45,7 +45,7 @@ export class Menu {
     const html = `<div class='table'>`
       + createList('9x9', this.settings.score.top9x9)
       + createList('16x16', this.settings.score.top16x16)
-      + createList('16x30', this.settings.score.top16x16)
+      + createList('16x30', this.settings.score.top16x30)
       + `</div>`;
     topElement.innerHTML = html;
     return topElement;
