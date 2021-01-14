@@ -50,7 +50,7 @@ export class Cell {
     if (this.isFlagged) this.toggleFlag();
     this.isClosed = false;
     if (this.value === 'm') {
-      this.element.classList.add('cell-mine');
+      this.element.classList.add('cell-boom');
       this.mainSettings.loseFunction();
     } else if (this.value === 0) {
       this.element.classList.add('cell-empty');

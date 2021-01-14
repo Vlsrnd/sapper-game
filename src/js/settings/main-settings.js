@@ -13,8 +13,8 @@ export const mainSettings = {
   cells: new Map(),
   gameArea: null,
   menu: null,
-  winFunction: () => alert('you win'),
-  loseFunction: () => alert('you lose'),
+  winFunction: null,
+  loseFunction: null,
   score: {
     top9x9: (new Array(10)).fill([]),
     top16x16: (new Array(10)).fill([]),
@@ -28,6 +28,7 @@ export const mainSettings = {
   },
   currentGame: {
     isRun: false,
+    isEnd: false,
     isPaused: true,
     timer: null,
     minesCounter: null,

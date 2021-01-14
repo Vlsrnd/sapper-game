@@ -96,12 +96,12 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-.cell-element:hover {
-  border: 1px solid black;
-}
 
 .cell-mine {
   background-image: url(../img/mine-cell.png);
+}
+.cell-boom {
+  background-image: url(../img/boom-cell.png);
 }
 .cell-empty {
   background-image: url(../img/empty-cell.png);

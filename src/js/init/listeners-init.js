@@ -7,6 +7,7 @@ export const listenersInit = (settings) => {
   settings.gameArea.addEventListener('mousedown', (event) => checkIsDoubleButtonClick(event));
   settings.gameArea.addEventListener('mouseup', (event) => checkIsDoubleButtonClick(event));
   settings.gameArea.addEventListener('mouseup', (event) => {
+    if (mainSettings.currentGame.isEnd) return;
     if (!event.target.classList.contains('cell-element')) return;
     const cell = settings.cells.get(event.target);
     if (event.button === 0) {
