@@ -126,43 +126,9 @@
   display: flex;
 }
 .cell-element {
-  text-align: center;
-<<<<<<< HEAD
-  line-height: 30px;
-  font-size: 22px;
-  font-weight: 800;
   width: 30px;
   height: 30px;
-  background-color: #828282;
-  background-image: url(../img/closed-cell.png);
-  background-size: cover;
-  position: relative;
-}
-
-.cell-element:hover {
-  border: 1px solid #777;
-}
-
-.cell-mine {
-  background-color: #828282;
-  background-image: url(../img/mine.png);
-  background-size: cover;
-}
-.cell-empty {
-  background-color: #828282;
-  background-image: url(../img/open-cell-bg.png);
-  background-size: cover;
-}
-.cell-num {
-  background-color: #828282;
-  background-image: url(../img/open-cell-bg.png);
-  background-size: cover;
-}
-.cell-flag {
-  /* background-image: url(../img/closed-cell.png); */
-  background-image: url(../img/flag.png);
-  background-size: cover;
-=======
+  text-align: center;
   background-color: #333;
   background-image: url(../img/closed-cell.png);
   background-size: cover;
@@ -184,7 +150,6 @@
 }
 .cell-flag {
   background-image: url(../img/flag-cell.png);
->>>>>>> 991eeff2a9e4d172cc27732776c1daf8a9c69245
 }
 
 .hide {
