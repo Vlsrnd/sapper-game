@@ -1,4 +1,4 @@
-export const createScoreForm = (settings) => {
+export const createAddScoreForm = (settings) => {
   const form = document.createElement('form');
   form.classList.add('win-form', 'invisible');
   form.innerHTML = '<div>CONGRATULATIONS!!!</div>'
