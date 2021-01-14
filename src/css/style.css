@@ -6,11 +6,6 @@
   margin: 0;
   font-family: monospace;
 }
-/* body { */
-  /* width: 100%; */
-  /* min-height: 100vh; */
-  /* position: relative; */
-/* } */
 #root {
   width: 100%;
   min-height: 100vh;
@@ -132,6 +127,7 @@
 }
 .cell-element {
   text-align: center;
+<<<<<<< HEAD
   line-height: 30px;
   font-size: 22px;
   font-weight: 800;
@@ -166,6 +162,29 @@
   /* background-image: url(../img/closed-cell.png); */
   background-image: url(../img/flag.png);
   background-size: cover;
+=======
+  background-color: #333;
+  background-image: url(../img/closed-cell.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.cell-mine {
+  background-image: url(../img/mine-cell.png);
+}
+.cell-boom {
+  background-image: url(../img/boom-cell.png);
+}
+.cell-empty {
+  background-image: url(../img/empty-cell.png);
+}
+.cell-num {
+  background-image: url(../img/empty-cell.png);
+  text-align: center;
+}
+.cell-flag {
+  background-image: url(../img/flag-cell.png);
+>>>>>>> 991eeff2a9e4d172cc27732776c1daf8a9c69245
 }
 
 .hide {

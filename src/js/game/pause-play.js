@@ -1,4 +1,5 @@
 export const pausePlay = (settings, button) => {
+  if (settings.currentGame.isEnd) return;
   if (settings.currentGame.isPaused) {
     settings.currentGame.timer.start();
     button.classList.remove('start-icon');

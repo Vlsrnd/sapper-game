@@ -15,7 +15,10 @@ import { countClosedCells } from './game/count-closed-cells';
 import { loadScore } from './init/load-score';
 import { onclickInit } from './init/onclick-init';
 import { listenersInit } from './init/listeners-init';
+import { win } from './game/win';
+import { lose } from './game/lose';
 
+window.mainSettings = mainSettings;
 const root = document.getElementById('root');
 document.addEventListener('mousedown', (event) => event.preventDefault());
 document.addEventListener('contextmenu', (event) => event.preventDefault());
@@ -37,6 +40,8 @@ const gameStart = (row, column, minesCount, settings) => {
 const gameInit = (settings) => {
   loadScore(settings)
     .then(settings => {
+      settings.winFunction = win(settings);
+      settings.loseFunction = lose(settings);
       settings.menu = new Menu(settings);
       root.append(settings.menu.mainElement);
       settings.gameArea = createGameArea(settings);
@@ -51,6 +56,5 @@ window.addEventListener('load', () => {
 });
 
 //Only for dev
-window.mainSettings = mainSettings;
 window.count = countClosedCells;
 //

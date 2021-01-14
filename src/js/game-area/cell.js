@@ -36,7 +36,7 @@ export class Cell {
         )
       })
   }
-  open = (force) => {
+  open = (force, end) => {
     if (!this.isClosed && force) {
       this.neighbors
         .filter(cell => cell.isClosed)
@@ -47,7 +47,11 @@ export class Cell {
     if (this.isFlagged) this.toggleFlag();
     this.isClosed = false;
     if (this.value === 'm') {
-      this.element.classList.add('cell-mine');
+      if (end) {
+        this.element.classList.add('cell-mine');
+        return;
+      }
+      this.element.classList.add('cell-boom');
       this.mainSettings.loseFunction();
     } else if (this.value === 0) {
       this.element.classList.add('cell-empty');
@@ -59,11 +63,18 @@ export class Cell {
     else {
       this.element.textContent = this.value;
       this.element.classList.add('cell-num');
+      this.element.style.color = this.mainSettings.colors[this.value];
     }
   }
   toggleFlag = () => {
-    if (!this.isClosed) debugger;
-    this.isFlagged = !this.isFlagged;
+    if (!this.isClosed) return;
+    if (this.isFlagged) {
+      this.isFlagged = false;
+      this.mainSettings.currentGame.minesCounter.increase();
+    } else {
+      this.isFlagged = true;
+      this.mainSettings.currentGame.minesCounter.decrease();
+    }
     this.element.classList.toggle('cell-flag');
   }
 };
