@@ -1,4 +1,4 @@
->*,
+*,
 *::before,
 *::after {
   box-sizing: border-box;
@@ -6,11 +6,6 @@
   margin: 0;
   font-family: monospace;
 }
-/* body { */
-  /* width: 100%; */
-  /* min-height: 100vh; */
-  /* position: relative; */
-/* } */
 #root {
   width: 100%;
   min-height: 100vh;
@@ -97,24 +92,26 @@
 .cell-element {
   text-align: center;
   background-color: #333;
-  border: 1px solid black;
+  background-image: url(../img/closed-cell.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .cell-element:hover {
-  background-color: #555;
+  border: 1px solid black;
 }
 
 .cell-mine {
-  background-color: red;
+  background-image: url(../img/mine-cell.png);
 }
 .cell-empty {
-  background-color: #fff;
+  background-image: url(../img/empty-cell.png);
 }
 .cell-num {
-  background-color: #fff;
+  background-image: url(../img/empty-cell.png);
   text-align: center;
 }
 .cell-flag {
-  background-color: olive;
+  background-image: url(../img/flag-cell.png);
 }
 
 .hide {
