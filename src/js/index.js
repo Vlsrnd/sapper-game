@@ -36,6 +36,7 @@ const gameStart = (row, column, minesCount, settings) => {
   settings.gameArea.classList.remove('hide');
   timerInit(settings);
   minesCounterInit(settings);
+  settings.winAnimationSettings = winAnimationInit(root);
 };
 
 const gameInit = (settings) => {
@@ -54,7 +55,6 @@ const gameInit = (settings) => {
 
 window.addEventListener('load', () => {
   gameInit(mainSettings);
-  mainSettings.winAnimationSettings = winAnimationInit(root);
 });
 
 //Only for dev

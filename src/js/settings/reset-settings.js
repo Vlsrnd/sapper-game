@@ -8,4 +8,5 @@ export const resetSettings = (settings) => {
   settings.currentGame.minesCounter = null;
   settings.currentGame.closedMinesCount = null;
   settings.gameAreaHeaderElements.timer.textContent = '000';
+  settings.winAnimationStart = null;
 };
