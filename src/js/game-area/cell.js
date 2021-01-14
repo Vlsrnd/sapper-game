@@ -39,7 +39,7 @@ export class Cell {
         )
       })
   }
-  open = (force) => {
+  open = (force, end) => {
     if (!this.isClosed && force) {
       this.neighbors
         .filter(cell => cell.isClosed)
@@ -50,6 +50,10 @@ export class Cell {
     if (this.isFlagged) this.toggleFlag();
     this.isClosed = false;
     if (this.value === 'm') {
+      if (end) {
+        this.element.classList.add('cell-mine');
+        return;
+      }
       this.element.classList.add('cell-boom');
       this.mainSettings.loseFunction();
     } else if (this.value === 0) {
