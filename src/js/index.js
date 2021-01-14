@@ -41,6 +41,7 @@ const gameStart = (row, column, minesCount, settings) => {
 
 const gameInit = async (settings) => {
   settings.score = await loadScore(settings);
+  
   settings.winFunction = win(settings);
   settings.loseFunction = lose(settings);
   settings.menu = new Menu(settings);

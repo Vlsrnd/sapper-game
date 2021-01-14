@@ -38,10 +38,14 @@ export class Cell {
   }
   open = (force, end) => {
     if (!this.isClosed && force) {
-      this.neighbors
-        .filter(cell => cell.isClosed)
-        .filter(cell => !cell.isFlagged)
+      const flaggedNeighborsCount = this.neighbors
+        .filter(cell => cell.isClosed && cell.isFlagged)
+        .length;
+      if (flaggedNeighborsCount === this.value) {
+        this.neighbors
+        .filter(cell => cell.isClosed && !cell.isFlagged)
         .forEach(cell => cell.open());
+      }
     }
     if (!this.isClosed) return;
     if (this.isFlagged) this.toggleFlag();
