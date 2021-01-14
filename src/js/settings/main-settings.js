@@ -3,6 +3,7 @@ export const mainSettings = {
     row: 16,
     column: 30,
   },
+  colors: ['transparent', 'blue', 'green', 'red', 'darkblue', 'darkred', 'darkred', 'darkred', 'darkred'],
   minesCount: 99,
   closedMinesCount: 99,
   minefield: null,

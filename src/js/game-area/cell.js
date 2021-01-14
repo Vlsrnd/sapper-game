@@ -66,6 +66,7 @@ export class Cell {
     else {
       this.element.textContent = this.value;
       this.element.classList.add('cell-num');
+      this.element.style.color = this.mainSettings.colors[this.value];
     }
   }
   toggleFlag = () => {
