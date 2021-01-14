@@ -6,4 +6,5 @@ export const resetSettings = (settings) => {
   settings.currentGame.isPaused = true;
   settings.currentGame.timer = null;
   settings.currentGame.minesCounter = null;
+  settings.currentGame.closedMinesCount = null;
 };

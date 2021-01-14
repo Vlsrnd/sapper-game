@@ -5,7 +5,6 @@ export const mainSettings = {
   },
   colors: ['transparent', 'blue', 'green', 'red', 'darkblue', 'darkred', 'darkred', 'darkred', 'darkred'],
   minesCount: 99,
-  closedMinesCount: 99,
   minefield: null,
   cellSize: {
     width: 20,
@@ -33,6 +32,7 @@ export const mainSettings = {
     isPaused: true,
     timer: null,
     minesCounter: null,
+    closedMinesCount: null,
   },
 };
 

@@ -18,6 +18,7 @@ import { listenersInit } from './init/listeners-init';
 import { win } from './game/win';
 import { lose } from './game/lose';
 
+window.mainSettings = mainSettings;
 const root = document.getElementById('root');
 document.addEventListener('mousedown', (event) => event.preventDefault());
 document.addEventListener('contextmenu', (event) => event.preventDefault());
@@ -55,6 +56,5 @@ window.addEventListener('load', () => {
 });
 
 //Only for dev
-window.mainSettings = mainSettings;
 window.count = countClosedCells;
 //
