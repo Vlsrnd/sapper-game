@@ -19,6 +19,7 @@ export const mainSettings = {
   gameAreaHeaderElements: {
     menu: null,
     timer: null,
+    restart: null,
     pause: null,
     minesLeft: null,
   },
