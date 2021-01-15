@@ -1,3 +1,24 @@
+@font-face {
+  font-family: 'LCDNova';
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/lcd-nova.woff');
+}
+@font-face {
+  font-family: 'sports-world';
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/sports-world.woff');
+}
+@font-face {
+  font-family: 'ds-digital-bold';
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../fonts/ds-digital-bold.woff');
+}
 *,
 *::before,
 *::after {
@@ -26,7 +47,7 @@
 .menu__btn {
   background: none;
   border: none;
-  font-family: monospace;
+  font-family: 'sports-world', monospace;
   font-size: 2rem;
   font-weight: 700;
   color: #ffebcd;
@@ -72,35 +93,32 @@
 }
 .game-area__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .game-area__header-button {
   width: 40px;
   height: 40px;
+  background-size: cover;
 }
-.start-icon {
-  content: 'start';
-  background-color: #777;
+.menu-icon {
+  content: 'menu';
 }
-.pause-icon {
-  background-color: #333;
-  position: relative;
+.mines-left-icon,
+.timer-icon {
+  width: 60px;
+  line-height: 40px;
+  background-color: #828282;
+  font-family: 'ds-digital-bold', monospace;
+  font-size: 36px;
+  font-weight: 700;
+  color: hsl(0, 100%, 30%);
 }
-.start-icon {
-  background-color: #333;
-  position: relative;
-}
-.start-icon::before {
-  content: '';
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 12px 0 12px 24px;
-  border-color: transparent transparent transparent #000000;
-  position: absolute;
-  top: 8px;
-  left: 8px;
-}
+
+.smile-good { background-image: url('../img/smile-good.png') }
+.smile-bad { background-image: url('../img/smile-bad.png'); }
+
+.pause-icon { background-image: url('../img/pause.png') }
+.start-icon { background-image: url('../img/play.png') }
 
 .line-element {
   display: flex;
@@ -108,29 +126,21 @@
 .cell-element {
   width: 30px;
   height: 30px;
+  font-family: 'sports-world', monospace;
+  font-size: 1.4rem;
   text-align: center;
+  line-height: 30px;
   background-color: #333;
   background-image: url(../img/closed-cell.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
+.cell-mine { background-image: url(../img/mine-cell.png) }
+.cell-boom { background-image: url(../img/boom-cell.png) }
+.cell-empty { background-image: url(../img/empty-cell.png) }
+.cell-num { background-image: url(../img/empty-cell.png) }
+.cell-flag { background-image: url(../img/flag-cell.png) }
 
-.cell-mine {
-  background-image: url(../img/mine-cell.png);
-}
-.cell-boom {
-  background-image: url(../img/boom-cell.png);
-}
-.cell-empty {
-  background-image: url(../img/empty-cell.png);
-}
-.cell-num {
-  background-image: url(../img/empty-cell.png);
-  text-align: center;
-}
-.cell-flag {
-  background-image: url(../img/flag-cell.png);
-}
 .win-animation-canvas {
   position: absolute;
   top: 0;
