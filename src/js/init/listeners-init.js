@@ -3,6 +3,7 @@ import { checkIsDoubleButtonClickCreator } from './check-is-double-button-click-
 import { openMenu } from '../game/open-menu';
 import { checkAmIWin } from '../game/check-am-i-win';
 import { mainSettings } from '../settings/main-settings';
+import { gameStart } from './game-start';
 
 export const listenersInit = (settings) => {
   const checkIsDoubleButtonClick = checkIsDoubleButtonClickCreator(settings);
@@ -22,8 +23,12 @@ export const listenersInit = (settings) => {
     checkAmIWin(mainSettings);
   });
   settings.gameArea.addEventListener('click', (event) => {
-    const {pause, menu} = settings.gameAreaHeaderElements; 
+    const {pause, menu, restart} = settings.gameAreaHeaderElements; 
     if (event.target === pause) pausePlay(settings, event.target);
     else if (event.target === menu) openMenu(settings);
+    else if (event.target === restart) {
+      pausePlay(settings, settings.gameAreaHeaderElements.pause);
+      gameStart(settings.size.row, settings.size.column, settings.minesCount, settings);
+    }
   });
 };

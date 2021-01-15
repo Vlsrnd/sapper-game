@@ -1,11 +1,4 @@
 @font-face {
-  font-family: 'LCDNova';
-  font-style: bold;
-  font-weight: 700;
-  font-display: swap;
-  src: url('../fonts/lcd-nova.woff');
-}
-@font-face {
   font-family: 'sports-world';
   font-style: bold;
   font-weight: 700;
