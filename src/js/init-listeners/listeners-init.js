@@ -16,7 +16,7 @@ export const listenersInit = (settings) => {
     if (event.button === 0) cell.open();
     else if (event.button === 1) cell.open(true);
     else if (event.button === 2) cell.toggleFlag();
-    if (checkAmIWin(settings)) settings.winFunctions();
+    checkAmIWin(settings);
   };
   const onMouseup = onMouseupCreator(settings);
 

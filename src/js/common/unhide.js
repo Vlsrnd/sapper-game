@@ -1,1 +1,3 @@
-export const unhide = (element) => element.classList.remove('hide');
+export const unhide = (element) => {
+  element.classList.remove('hide');
+};
