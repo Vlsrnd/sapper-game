@@ -1,4 +1,4 @@
-import { checkAmIWin } from "../game/win/check-am-i-win";
+import { amIWin } from "../game/win/check-am-i-win";
 
 export const checkIsDoubleButtonClickCreator = (settings) => {
   return (event) => {
@@ -8,6 +8,6 @@ export const checkIsDoubleButtonClickCreator = (settings) => {
     if (event.button === 0) mouseButtonDown.left = event.type === 'mousedown' ? true : false;
     if (event.button === 2) mouseButtonDown.right = event.type === 'mousedown' ? true : false;
     if (mouseButtonDown.left && mouseButtonDown.right) settings.cells.get(event.target).open(true);
-    if (checkAmIWin(settings)) settings.winFunctions();
+    if (amIWin(settings)) settings.winFunctions();
   };
 };

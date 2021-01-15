@@ -1,7 +1,7 @@
 import { pausePlay } from '../game/pause-play';
 import { checkIsDoubleButtonClickCreator } from '../init-listeners/check-is-double-button-click-creator';
 import { openMenu } from '../interface/open-menu';
-import { checkAmIWin } from '../game/win/check-am-i-win';
+import { amIWin } from '../game/win/check-am-i-win';
 import { gameStart } from '../game/game-start';
 
 export const listenersInit = (settings) => {
@@ -16,7 +16,7 @@ export const listenersInit = (settings) => {
     if (event.button === 0) cell.open();
     else if (event.button === 1) cell.open(true);
     else if (event.button === 2) cell.toggleFlag();
-    if (checkAmIWin(settings)) settings.winFunctions();
+    if (amIWin(settings)) settings.winFunctions();
   };
   const onMouseup = onMouseupCreator(settings);
 
