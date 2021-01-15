@@ -20,6 +20,6 @@ export const gameStart = (row, column, minesCount, settings) => {
   unhide(settings.gameArea);
   timerInit(settings);
   minesCounterInit(settings);
-  settings.winAnimationSettings = winAnimationInit(root);
+  settings.winAnimationSettings = winAnimationInit(settings.rootElement);
 };
 

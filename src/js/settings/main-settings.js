@@ -1,4 +1,5 @@
 export const mainSettings = {
+  rootElement: null,
   size: {
     row: 16,
     column: 30,

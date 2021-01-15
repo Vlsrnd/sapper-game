@@ -11,25 +11,21 @@ import { win } from './game/win/win';
 import { lose } from './game/lose';
 import { gameStart } from './game/game-start';
 
-const root = document.getElementById('root');
-
-window.mainSettings = mainSettings;
-window.root = root;
-
-document.addEventListener('mousedown', (event) => event.preventDefault());
-document.addEventListener('contextmenu', (event) => event.preventDefault());
-document.addEventListener('mouseup', (event) => event.preventDefault());
-
 const gameInit = async (settings) => {
+  settings.rootElement = document.getElementById('root');
   settings.score = await loadScore(settings);
   settings.winFunction = win(settings);
   settings.loseFunction = lose(settings);
   settings.menu = new Menu(settings);
-  root.append(settings.menu.mainElement);
+  settings.rootElement.append(settings.menu.mainElement);
   settings.gameArea = createGameArea(settings);
-  root.append(settings.gameArea);
+  settings.rootElement.append(settings.gameArea);
   listenersInit(settings);
   onclickInit(settings, gameStart);
 };
+
+document.addEventListener('mousedown', (event) => event.preventDefault());
+document.addEventListener('contextmenu', (event) => event.preventDefault());
+document.addEventListener('mouseup', (event) => event.preventDefault());
 
 window.addEventListener('load', () => gameInit(mainSettings));

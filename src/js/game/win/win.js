@@ -7,5 +7,5 @@ export const win = (settings) => () => {
   settings.currentGame.isEnd = true;
   Array.from(settings.cells.values())
       .map(cell => cell.isClosed && cell.value === 'm' ? cell.open(false, true) : null);
-  winAnimationStart(settings.winAnimationSettings, () => showAddScoreForm(settings, root));
+  winAnimationStart(settings.winAnimationSettings, () => showAddScoreForm(settings, settings.rootElement));
 };
