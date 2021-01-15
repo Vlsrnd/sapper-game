@@ -3,7 +3,7 @@ import { openMenu } from '../game/open-menu';
 
 export const addScoreToTopCreator = (settings) => (event) => {
   event.preventDefault();
-  const name = event.target.querySelector('input').value;
+  const name = event.target.querySelector('input').value || 'Unknown hero';
   const {row, column} = settings.size;
   const top = settings.score[`top${row}x${column}`];
   top.pop();
