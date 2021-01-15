@@ -2,6 +2,9 @@ export const addCellsToGameArea = (settings) => {
   let linesCount = 0;
   const newArea = document.createElement('div');
   newArea.classList.add('area');
+  const warShadow = document.createElement('div');
+  warShadow.classList.add('area__war-shadow', 'hide');
+  newArea.append(warShadow);
   while (linesCount < settings.size.row) {
     const line = document.createElement('div');
     line.classList.add('line-element');
@@ -15,6 +18,6 @@ export const addCellsToGameArea = (settings) => {
       newArea.append(line);
       linesCount++;
     }
-  settings.gameArea.querySelector('.area').remove();
+  settings.gameArea.querySelector('.area') && settings.gameArea.querySelector('.area').remove();
   settings.gameArea.append(newArea);
 };

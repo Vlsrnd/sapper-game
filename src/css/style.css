@@ -118,7 +118,6 @@
   border-radius: 9999px;
 }
 .menu-icon:hover.menu-icon::before {
-
   transition: all .1s linear;
   transform: rotate(-30deg);
 }
@@ -126,7 +125,19 @@
   transition: all .1s linear;
   transform: rotate(30deg);
 }
-
+.area {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.area__war-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+}
 
 .mines-left-icon,
 .timer-icon {
@@ -170,7 +181,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  backdrop-filter: blur(2px) saturate(100%) contrast(45%) brightness(50%);
+  backdrop-filter: blur(2px) brightness(50%);
 }
 .add-score-form {
   position: absolute;
