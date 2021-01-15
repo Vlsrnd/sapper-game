@@ -1,4 +1,9 @@
+import { pausePlay } from "../game/pause-play";
+
 export const resetSettings = (settings) => {
+  if (!settings.currentGame.isPaused) pausePlay(settings, settings.gameAreaHeaderElements.pause);
+  settings.gameAreaHeaderElements.pause.classList.add('pause-icon');
+  settings.gameAreaHeaderElements.pause.classList.remove('start-icon');
   settings.minefield = null;
   settings.cells.clear();
   settings.currentGame.isRun = false;

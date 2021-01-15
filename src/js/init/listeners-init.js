@@ -27,7 +27,6 @@ export const listenersInit = (settings) => {
     if (event.target === pause) pausePlay(settings, event.target);
     else if (event.target === menu) openMenu(settings);
     else if (event.target === restart) {
-      pausePlay(settings, settings.gameAreaHeaderElements.pause);
       gameStart(settings.size.row, settings.size.column, settings.minesCount, settings);
     }
   });
