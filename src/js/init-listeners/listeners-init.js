@@ -1,9 +1,9 @@
 import { pausePlay } from '../game/pause-play';
-import { checkIsDoubleButtonClickCreator } from './check-is-double-button-click-creator';
-import { openMenu } from '../game/open-menu';
-import { checkAmIWin } from '../game/check-am-i-win';
+import { checkIsDoubleButtonClickCreator } from '../init-listeners/check-is-double-button-click-creator';
+import { openMenu } from '../interface/open-menu';
+import { checkAmIWin } from '../game/win/check-am-i-win';
 import { mainSettings } from '../settings/main-settings';
-import { gameStart } from './game-start';
+import { gameStart } from '../game/game-start';
 
 export const listenersInit = (settings) => {
   const checkIsDoubleButtonClick = checkIsDoubleButtonClickCreator(settings);

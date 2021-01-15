@@ -1,4 +1,4 @@
-import { checkAmIWin } from "../game/check-am-i-win";
+import { checkAmIWin } from "../game/win/check-am-i-win";
 
 export const checkIsDoubleButtonClickCreator = (settings) => {
   return (event) => {

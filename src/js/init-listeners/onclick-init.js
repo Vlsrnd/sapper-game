@@ -1,4 +1,4 @@
-import { backToGame } from "../game/back-to-game";
+import { backToGame } from "../interface/back-to-game";
 
 export const onclickInit = (settings, gameStart) => {
   settings.menu.btn.newGame9x9.onclick = () => gameStart(9, 9, 10, settings);

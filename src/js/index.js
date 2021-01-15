@@ -1,19 +1,21 @@
 'use strict';
 import '../css/style.css';
 import '../index.html';
-import { createGameArea } from "./game-area/create-game-area";
 import { mainSettings } from './settings/main-settings';
+import { createGameArea } from "./game-area/create-game-area";
 import { Menu } from './interface/menu';
-import { countClosedCells } from './game/count-closed-cells';
-import { loadScore } from './init/load-score';
-import { onclickInit } from './init/onclick-init';
-import { listenersInit } from './init/listeners-init';
+import { loadScore } from './settings/score/load-score';
+import { listenersInit } from './init-listeners/listeners-init';
+import { onclickInit } from './init-listeners/onclick-init';
 import { win } from './game/win/win';
 import { lose } from './game/lose';
-import { gameStart } from './init/game-start';
+import { gameStart } from './game/game-start';
+
+const root = document.getElementById('root');
 
 window.mainSettings = mainSettings;
-const root = document.getElementById('root');
+window.root = root;
+
 document.addEventListener('mousedown', (event) => event.preventDefault());
 document.addEventListener('contextmenu', (event) => event.preventDefault());
 document.addEventListener('mouseup', (event) => event.preventDefault());
@@ -30,10 +32,4 @@ const gameInit = async (settings) => {
   onclickInit(settings, gameStart);
 };
 
-window.addEventListener('load', () => {
-  gameInit(mainSettings);
-});
-
-//Only for dev
-window.count = countClosedCells;
-//
+window.addEventListener('load', () => gameInit(mainSettings));

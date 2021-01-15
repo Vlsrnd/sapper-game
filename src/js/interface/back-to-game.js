@@ -1,4 +1,4 @@
-import { pausePlay } from "./pause-play";
+import { pausePlay } from "../game/pause-play";
 
 export const backToGame = (settings) => {
   if (settings.currentGame.isPaused && !settings.currentGame.isEnd) {

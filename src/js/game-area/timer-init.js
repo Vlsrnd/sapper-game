@@ -1,4 +1,4 @@
-import { Timer } from "../game-area/header/timer";
+import { Timer } from "./header/timer";
 
 export const timerInit = (settings) => {
   settings.currentGame.timer = new Timer(settings, 

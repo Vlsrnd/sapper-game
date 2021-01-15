@@ -1,5 +1,5 @@
-import { saveScore } from '../init/save-score';
-import { openMenu } from '../game/open-menu';
+import { saveScore } from './save-score';
+import { openMenu } from '../../interface/open-menu';
 
 export const addScoreToTopCreator = (settings) => (event) => {
   event.preventDefault();

@@ -1,6 +1,6 @@
 import { createAddScoreForm } from './create-add-score-form';
 import { findSlowestInTop } from './find-slowest-in-top';
-import { addScoreToTopCreator } from './add-score-to-top-creator';
+import { addScoreToTopCreator } from '../settings/score/add-score-to-top-creator';
 
 export const showAddScoreForm = (settings, destination) => {
   const slowestUserInTop = findSlowestInTop(settings);

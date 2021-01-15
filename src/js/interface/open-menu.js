@@ -1,4 +1,4 @@
-import { pausePlay } from "./pause-play";
+import { pausePlay } from "../game/pause-play";
 
 export const openMenu = (settings) => {
   if (!settings.currentGame.isPaused) pausePlay(settings, settings.gameAreaHeaderElements.pause);

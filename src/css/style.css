@@ -18,6 +18,7 @@
   --color-bg: #333;
   --color-highlight: #444;
   --color-text: #ffebcd;
+  --color-text2: #7fffd4;
   --color-red: hsl(0, 100%, 30%);
   --color-icon-bg: #828282;
 }
@@ -71,6 +72,7 @@
   justify-content: space-between;
   color: var(--color-text);
   font-size: 1.4rem;
+  text-transform: uppercase;
 }
 
 .menu-top .table {
@@ -93,6 +95,10 @@
   display: flex;
   justify-content: space-between;
   padding: 0 10px;
+}
+
+.menu-top .list ul li:nth-child(2n) {
+  color: var(--color-text2);
 }
 
 .game-area {

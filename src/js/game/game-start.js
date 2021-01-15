@@ -3,9 +3,9 @@ import { createElements } from "../game-area/create-elements";
 import { generateMinefield } from "../game-area/generate-mine-field";
 import { resetSettings } from "../settings/reset-settings";
 import { setSettings } from "../settings/set-settings";
-import { minesCounterInit } from "./mines-counter-init";
-import { timerInit } from "./timer-init";
-import { winAnimationInit } from '../game/win/win-animation-init';
+import { minesCounterInit } from "../game-area/mines-counter-init";
+import { timerInit } from "../game-area/timer-init";
+import { winAnimationInit } from './win/win-animation-init';
 
 export const gameStart = (row, column, minesCount, settings) => {
   if (settings.currentGame.isRun) resetSettings(settings);
