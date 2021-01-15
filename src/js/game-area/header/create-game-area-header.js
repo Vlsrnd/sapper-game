@@ -1,4 +1,3 @@
-import { timerInit } from '../timer-init';
 import {createHeaderButton} from './create-header-button';
 
 export const createGameAreaHeader = (settings) => {

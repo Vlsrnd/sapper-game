@@ -46,8 +46,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 80%;
-  min-height: 10vh;
+  width: 100%;
 }
 
 .menu__btn {
@@ -77,6 +76,7 @@
 
 .menu-top .table {
   display: flex;
+  flex-direction: column;
 }
 
 .menu-top .list {
@@ -110,6 +110,7 @@
 .game-area__header {
   display: flex;
   justify-content: space-around;
+  border-bottom: 5px solid #000;
 }
 
 .game-area__header-button {
@@ -117,32 +118,27 @@
   height: 40px;
   background-color: var(--color-icon-bg);
   background-size: cover;
+  border: none;
 }
 
 .menu-icon {
   position: relative;
 }
 
-.menu-icon::before {
-  content: '';
-  position: absolute;
-  width: 30px;
-  height: 6px;
-  background-color: #000;
-  top: 8px;
-  left: 2px;
-  border-radius: 9999px;
-}
-
+.menu-icon::before,
 .menu-icon::after {
   content: '';
   position: absolute;
   width: 30px;
   height: 6px;
   background-color: #000;
-  top: 20px;
-  left: 2px;
+  top: 10px;
+  left: 5px;
   border-radius: 9999px;
+}
+
+.menu-icon::after {
+  top: 24px;
 }
 
 .menu-icon:hover.menu-icon::before {
@@ -153,6 +149,71 @@
 .menu-icon:hover.menu-icon::after {
   transition: all .1s linear;
   transform: rotate(30deg);
+}
+
+.mines-left-icon,
+.timer-icon {
+  width: 50px;
+  line-height: 40px;
+  font-family: 'ds-digital-bold', monospace;
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--color-red);
+}
+
+.smile-good {
+  background-image: url('../img/smile-good.png');
+}
+
+.smile-bad {
+  background-image: url('../img/smile-bad.png');
+}
+
+.pause-icon {
+  position: relative;
+}
+.pause-icon::before,
+.pause-icon::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 30px;
+  background-color: #000;
+  top: 5px;
+  left: 10px;
+  border-radius: 9999px;
+}
+.pause-icon::after {
+  left: 24px;
+}
+.pause-icon:hover.pause-icon::before,
+.pause-icon:hover.pause-icon::after {
+  transform: scale(1.1);
+}
+.pause-icon:active.pause-icon::before,
+.pause-icon:active.pause-icon::after {
+  transform: scale(1)
+}
+
+.start-icon {
+  position: relative;
+}
+.start-icon::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 20px;
+  border-color: transparent transparent transparent #000000;
+}
+.start-icon:hover.start-icon::before {
+  transform: scale(1.1);
+}
+.start-icon:active.start-icon::before {
+  transform: scale(1);
 }
 
 .area {
@@ -170,39 +231,13 @@
   backdrop-filter: blur(10px);
 }
 
-.mines-left-icon,
-.timer-icon {
-  width: 60px;
-  line-height: 40px;
-  font-family: 'ds-digital-bold', monospace;
-  font-size: 36px;
-  font-weight: 700;
-  color: var(--color-red);
-}
-
-.smile-good {
-  background-image: url('../img/smile-good.png');
-}
-
-.smile-bad {
-  background-image: url('../img/smile-bad.png');
-}
-
-.pause-icon {
-  background-image: url('../img/pause.png');
-}
-
-.start-icon {
-  background-image: url('../img/play.png');
-}
-
 .line-element {
   display: flex;
 }
 
 .cell-element {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   font-family: 'sports-world', monospace;
   font-size: 1.4rem;
   text-align: center;
@@ -212,6 +247,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 
 .cell-mine {
   background-image: url(../img/mine-cell.png);
@@ -259,6 +295,26 @@
   font-weight: 700;
   color: var(--color-text);
   background-color: var(--color-bg);
+}
+
+@media (min-device-width: 599px){
+  .menu {
+    width: 80%;
+  }
+  .menu-top .table {
+    flex-direction: row;
+  }
+
+  .mines-left-icon,
+  .timer-icon {
+    width: 60px;
+    font-size: 36px;
+  }
+
+  .cell-element {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .invisible {

@@ -11,7 +11,10 @@ export class Timer {
       this.timerId = setTimeout(() => this.start(), 1000);
       return;
     }
-    if (this.time >= 999) this.pause();
+    if (this.time >= 5) {
+      this.pause();
+      return
+    }
     this.time++;
     this.updateElement();
     this.timerId = setTimeout(() => this.start(), 1000);
