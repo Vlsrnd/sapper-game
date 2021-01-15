@@ -6,6 +6,8 @@ import { setSettings } from "../settings/set-settings";
 import { minesCounterInit } from "../game-area/mines-counter-init";
 import { timerInit } from "../game-area/timer-init";
 import { winAnimationInit } from './win/win-animation-init';
+import { hide } from "../common/hide";
+import { unhide } from "../common/unhide";
 
 export const gameStart = (row, column, minesCount, settings) => {
   if (settings.currentGame.isRun) resetSettings(settings);
@@ -14,8 +16,8 @@ export const gameStart = (row, column, minesCount, settings) => {
   createElements(settings);
   addCellsToGameArea(settings);
   settings.currentGame.isRun = true;
-  settings.menu.mainElement.classList.add('hide');
-  settings.gameArea.classList.remove('hide');
+  hide(settings.menu.mainElement);
+  unhide(settings.gameArea);
   timerInit(settings);
   minesCounterInit(settings);
   settings.winAnimationSettings = winAnimationInit(root);

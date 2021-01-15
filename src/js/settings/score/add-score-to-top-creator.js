@@ -1,5 +1,6 @@
 import { saveScore } from './save-score';
 import { openMenu } from '../../interface/open-menu';
+import { hide } from '../../common/hide';
 
 export const addScoreToTopCreator = (settings) => (event) => {
   event.preventDefault();
@@ -17,8 +18,8 @@ export const addScoreToTopCreator = (settings) => (event) => {
   saveScore(settings);
   settings.menu.top10Structure = settings.menu.createTop10Element();
   settings.menu.structure.top10[0] = settings.menu.top10Structure;
-  event.target.classList.add('hide');
-  settings.winAnimationSettings.canvas.classList.add('hide');
+  hide(event.target);
+  hide(settings.winAnimationSettings.canvas);
   openMenu(settings);
   settings.menu.switchMenu('top10');
 };
