@@ -6,7 +6,9 @@ export const addScoreToTopCreator = (settings) => (event) => {
   event.preventDefault();
   const name = event.target.querySelector('input').value || 'Unknown hero';
   const {row, column} = settings.size;
-  const top = settings.score[`top${row}x${column}`];
+  const top = settings.isWideResolution ?
+    settings.score[`top${row}x${column}`]
+    : settings.score[`top${column}x${row}`];
   top.pop();
   top.push([name, settings.currentGame.timer.time]);
   const sorted = top

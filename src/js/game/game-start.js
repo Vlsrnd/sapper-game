@@ -11,7 +11,9 @@ import { unhide } from "../common/unhide";
 
 export const gameStart = (row, column, minesCount, settings) => {
   if (settings.currentGame.isRun) resetSettings(settings);
-  setSettings(row, column, minesCount, settings);
+  settings.isWideResolution ?
+    setSettings(row, column, minesCount, settings)
+    : setSettings(column, row, minesCount, settings);
   generateMinefield(settings);
   createElements(settings);
   addCellsToGameArea(settings);
