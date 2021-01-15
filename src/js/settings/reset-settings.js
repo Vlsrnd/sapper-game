@@ -11,4 +11,5 @@ export const resetSettings = (settings) => {
   settings.winAnimationStart = null;
   settings.mouseButtonDown.left = false;
   settings.mouseButtonDown.right = false;
+  settings.gameAreaHeaderElements.restart.classList.remove('smile-bad');
 };
