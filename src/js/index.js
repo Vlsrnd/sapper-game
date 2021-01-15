@@ -10,8 +10,11 @@ import { onclickInit } from './init-listeners/onclick-init';
 import { win } from './game/win/win';
 import { lose } from './game/lose';
 import { gameStart } from './game/game-start';
+import { isWideResolutionQuery } from './settings/is-wide-resolution-query';
+import { toggleIsWideResolutionSettingCreator } from './settings/toggle-is-wide-resolution-setting-creator';
 
 const gameInit = async (settings) => {
+  isWideResolutionQuery(toggleIsWideResolutionSettingCreator(settings))
   settings.rootElement = document.getElementById('root');
   settings.score = await loadScore(settings);
   settings.winFunction = win(settings);
@@ -29,3 +32,5 @@ document.addEventListener('contextmenu', (event) => event.preventDefault());
 document.addEventListener('mouseup', (event) => event.preventDefault());
 
 window.addEventListener('load', () => gameInit(mainSettings));
+
+window.mainSettings = mainSettings;

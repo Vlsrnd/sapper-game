@@ -1,4 +1,5 @@
 export const mainSettings = {
+  isWideResolution: true,
   rootElement: null,
   size: {
     row: 16,
