@@ -4,8 +4,12 @@ import { addScoreToTopCreator } from './add-score-to-top-creator';
 
 export const showAddScoreForm = (settings, destination) => {
   const slowestUserInTop = findSlowestInTop(settings);
-  if (slowestUserInTop.length > 0 
-    && slowestUserInTop[1] < settings.currentGame.timer.time) return;
+  if (slowestUserInTop.length > 0 && slowestUserInTop[1] < settings.currentGame.timer.time) {
+    settings.winAnimationSettings.canvas.classList.add('hide');
+    openMenu(settings);
+    settings.menu.switchMenu('top10');
+    return;
+  }
 
   const form = createAddScoreForm(settings);
   destination.append(form);
