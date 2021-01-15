@@ -1,4 +1,4 @@
-const random = (min, max) => Math.floor(Math.random() * (max - min) + min);
+import { random } from '../../common/random';
 
 export class Particle {
   constructor(w, h) {

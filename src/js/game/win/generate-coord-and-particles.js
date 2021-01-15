@@ -1,7 +1,7 @@
 import { Particle } from "./particle";
+import { random } from '../../common/random';
 
 export const generateCoordAndParticles = (canvas, word, density, w, h) => {
-  const random = (min, max) => Math.floor(Math.random() * (max - min) + min);
   const ctx = canvas.getContext('2d');
   const result = {
     canvas: canvas,
