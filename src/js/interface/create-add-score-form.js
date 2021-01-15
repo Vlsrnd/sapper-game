@@ -8,6 +8,5 @@ export const createAddScoreForm = (settings) => {
   const button = document.createElement('button');
   button.textContent = 'Done';
   form.append(input, button);
-  
   return form;
 };

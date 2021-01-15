@@ -32,5 +32,9 @@ export const mainSettings = {
     closedMinesCount: null,
   },
   winAnimationSettings: null,
+  mouseButtonDown: {
+    left: false,
+    right: false,
+  }
 };
 

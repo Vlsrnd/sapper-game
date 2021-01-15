@@ -9,4 +9,6 @@ export const resetSettings = (settings) => {
   settings.currentGame.closedMinesCount = null;
   settings.gameAreaHeaderElements.timer.textContent = '000';
   settings.winAnimationStart = null;
+  settings.mouseButtonDown.left = false;
+  settings.mouseButtonDown.right = false;
 };
