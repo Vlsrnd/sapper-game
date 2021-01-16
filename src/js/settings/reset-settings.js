@@ -1,4 +1,4 @@
-import { pausePlay } from "../game/pause-play";
+import { pausePlay } from '../game/pause-play';
 
 export const resetSettings = (settings) => {
   if (!settings.currentGame.isPaused) pausePlay(settings, settings.gameAreaHeaderElements.pause);

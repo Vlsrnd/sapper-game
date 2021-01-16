@@ -1,4 +1,4 @@
-import { countClosedCells } from "../../common/count-closed-cells";
+import { countClosedCells } from '../../common/count-closed-cells';
 
 export const checkAmIWin = (settings) => {
   countClosedCells(settings);

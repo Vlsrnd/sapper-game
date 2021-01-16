@@ -1,4 +1,4 @@
-import { unhide } from "../../common/unhide";
+import { unhide } from '../../common/unhide';
 
 export const animationCreator = (coord, speed, settings) => {
   unhide(settings.canvas);

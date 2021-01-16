@@ -1,4 +1,4 @@
-import { createGameAreaHeader } from "./header/create-game-area-header";
+import { createGameAreaHeader } from './header/create-game-area-header';
 
 export const createGameArea = (settings) => {
   const gameArea = document.createElement('div');

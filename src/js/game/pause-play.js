@@ -1,5 +1,5 @@
-import { hide } from "../common/hide";
-import { unhide } from "../common/unhide";
+import { hide } from '../common/hide';
+import { unhide } from '../common/unhide';
 
 export const pausePlay = (settings, button) => {
   if (settings.currentGame.isEnd) return;

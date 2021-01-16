@@ -2,7 +2,7 @@
 import '../css/style.css';
 import '../index.html';
 import { mainSettings } from './settings/main-settings';
-import { createGameArea } from "./game-area/create-game-area";
+import { createGameArea } from './game-area/create-game-area';
 import { Menu } from './interface/menu';
 import { loadScore } from './settings/score/load-score';
 import { listenersInit } from './init-listeners/listeners-init';

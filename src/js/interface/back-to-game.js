@@ -1,6 +1,6 @@
-import { hide } from "../common/hide";
-import { unhide } from "../common/unhide";
-import { pausePlay } from "../game/pause-play";
+import { hide } from '../common/hide';
+import { unhide } from '../common/unhide';
+import { pausePlay } from '../game/pause-play';
 
 export const backToGame = (settings) => {
   let {isPaused, isEnd} = settings.currentGame;

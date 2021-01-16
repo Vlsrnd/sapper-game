@@ -1,4 +1,4 @@
-import { Particle } from "./particle";
+import { Particle } from './particle';
 import { random } from '../../common/random';
 
 export const generateCoordAndParticles = (canvas, word, density, w, h) => {
