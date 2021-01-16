@@ -1,10 +1,10 @@
 <h1 align="center">The minersweeper</h1>
 ____
 <p align="center">
-<img src="./readme_assets/game16x16.png" width="70%">
+<img src="./readme-assets/game16x16.png" alt="game">
 </p>
 <p align="center">
-<img src="./readme_assets/game.gif" width="30%">
+<img src="./readme_assets/game.gif" alt="gif game">
 </p>
 
 ### Install
