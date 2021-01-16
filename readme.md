@@ -1,4 +1,5 @@
-<h1 align="center">The minersweeper</h1>
+<h1 align="center">The minesweeper</h1>
+<p align="center">[The minesweeper](https://vlsrnd.github.io/sapper-game/)</p>
 <p align="center">
 <img src="./readme-assets/game16x16.png" alt="game">
 </p>
