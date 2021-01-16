@@ -1,2 +1,43 @@
-The minersweeper!
-Readme in progress....
+<h1 align="center">The minersweeper</h1>
+____
+<p align="center">
+<img src="./readme_assets/game16x16.png" width="70%">
+</p>
+<p align="center">
+<img src="./readme_assets/game.gif" width="30%">
+</p>
+
+### Install
+```
+npm install
+```
+### Usage
+```
+npm run start
+```
+### Build
+```
+npm run build
+```
+
+What was used:
+- Webpack 5;
+- JS:
+  + object, array, Map, Class;
+  + destructuring assignment;
+  + JSON;
+  + scheduling: setTimeout;
+  + closure;
+  + spread;
+  + async/await;
+  + work with DOM;
+  + matchMedia (media queries from JS);
+  + browser event, event delegation;
+  + mouse event;
+  + forms;
+  + localStorage;
+  + canvas (2d);
+  + requestAnimationFrame;
+____
+:negative_squared_cross_mark: Mobile is not support. :negative_squared_cross_mark:
+Well, really, this game is inconvenient for touch screens.
