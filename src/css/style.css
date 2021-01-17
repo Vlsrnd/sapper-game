@@ -229,6 +229,13 @@
   width: 100%;
   height: 100%;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+  .area__war-shadow {
+    background-color: var(--color-bg);
+  }
 }
 
 .line-element {
