@@ -36,8 +36,8 @@ export class Cell {
         )
       })
   }
-  open = (force, end) => {
-    if (!this.isClosed && force) {
+  open = (method) => {
+    if (!this.isClosed && method === 'force') {
       const flaggedNeighborsCount = this.neighbors
         .filter(cell => cell.isClosed && cell.isFlagged)
         .length;
@@ -51,7 +51,7 @@ export class Cell {
     if (this.isFlagged) this.toggleFlag();
     this.isClosed = false;
     if (this.value === 'm') {
-      if (end) {
+      if (method === 'final') {
         this.element.classList.add('cell-mine');
         return;
       }

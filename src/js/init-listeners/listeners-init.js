@@ -14,7 +14,7 @@ export const listenersInit = (settings) => {
     if (!event.target.classList.contains('cell-element')) return;
     const cell = settings.cells.get(event.target);
     if (event.button === 0) !cell.isFlagged && cell.open();
-    else if (event.button === 1) cell.open(true);
+    else if (event.button === 1) cell.open('force');
     else if (event.button === 2) cell.toggleFlag();
     checkAmIWin(settings);
   };

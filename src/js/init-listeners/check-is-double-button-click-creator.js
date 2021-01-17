@@ -7,7 +7,7 @@ export const checkIsDoubleButtonClickCreator = (settings) => {
     if (settings.currentGame.isEnd) return;
     if (event.button === 0) mouseButtonDown.left = event.type === 'mousedown' ? true : false;
     if (event.button === 2) mouseButtonDown.right = event.type === 'mousedown' ? true : false;
-    if (mouseButtonDown.left && mouseButtonDown.right) settings.cells.get(event.target).open(true);
+    if (mouseButtonDown.left && mouseButtonDown.right) settings.cells.get(event.target).open('force');
     checkAmIWin(settings);
   };
 };
