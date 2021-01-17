@@ -3,7 +3,7 @@
   font-style: bold;
   font-weight: 700;
   font-display: swap;
-  src: url('../fonts/sports-world.woff');
+  src: url('../assets/fonts/sports-world.woff');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: bold;
   font-weight: 700;
   font-display: swap;
-  src: url('../fonts/ds-digital-bold.woff');
+  src: url('../assets/fonts/ds-digital-bold.woff');
 }
 
 :root {
@@ -162,11 +162,11 @@
 }
 
 .smile-good {
-  background-image: url('../img/smile-good.png');
+  background-image: url('../assets/img/smile-good.png');
 }
 
 .smile-bad {
-  background-image: url('../img/smile-bad.png');
+  background-image: url('../assets/img/smile-bad.png');
 }
 
 .pause-icon {
@@ -243,30 +243,30 @@
   text-align: center;
   line-height: 30px;
   background-color: var(--color-bg);
-  background-image: url(../img/closed-cell.png);
+  background-image: url(../assets/img/closed-cell.png);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 
 .cell-mine {
-  background-image: url(../img/mine-cell.png);
+  background-image: url(../assets/img/mine-cell.png);
 }
 
 .cell-boom {
-  background-image: url(../img/boom-cell.png);
+  background-image: url(../assets/img/boom-cell.png);
 }
 
 .cell-empty {
-  background-image: url(../img/empty-cell.png);
+  background-image: url(../assets/img/empty-cell.png);
 }
 
 .cell-num {
-  background-image: url(../img/empty-cell.png);
+  background-image: url(../assets/img/empty-cell.png);
 }
 
 .cell-flag {
-  background-image: url(../img/flag-cell.png);
+  background-image: url(../assets/img/flag-cell.png);
 }
 
 .win-animation-canvas {
