@@ -1,21 +1,8 @@
 <h1 align="center">The minesweeper</h1>
 <p align="center">https://vlsrnd.github.io/sapper-game/</p>
 <p align="center">
-<img src="./readme-assets/game16x16.png" alt="game">
+<img src="https://drive.google.com/file/d/1GYQJuKU-EVpskxCc8y_FJ5w7I5G50b8f/view?usp=sharing" alt="game">
 </p>
-
-### Install
-```
-npm install
-```
-### Usage
-```
-npm run start
-```
-### Build
-```
-npm run build
-```
 
 What was used:
 - Webpack 5;
@@ -38,3 +25,16 @@ What was used:
 ____
 :negative_squared_cross_mark: Mobile is not support. :negative_squared_cross_mark:
 Well, really, this game is inconvenient for touch screens.
+
+### Install
+```
+npm install
+```
+### Usage
+```
+npm run start
+```
+### Build
+```
+npm run build
+```
