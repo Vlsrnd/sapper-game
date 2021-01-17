@@ -16,7 +16,7 @@ export const generateCoordAndParticles = (canvas, word, density, w, h) => {
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.fillText(word, w / 2, h / 2, w);
-  let pixel = ctx.getImageData(0, 0, w, h);
+  const pixel = ctx.getImageData(0, 0, w, h);
   for (let i = 0; i < h; i += density) {
     for (let j = 0; j < w; j += density) {
       if (
