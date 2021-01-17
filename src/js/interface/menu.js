@@ -1,9 +1,9 @@
 export class Menu {
-  constructor(settings){
+  constructor(config){
     const menu = document.createElement('div');
     menu.classList.add('menu');
     
-    this.settings = settings;
+    this.config = config;
     this.btn = {
       newGame: this.createBtn('new game'),
       newGame9x9: this.createBtn('9x9'),
@@ -43,9 +43,9 @@ export class Menu {
       + '</ul></div>')
     };
     const html = `<div class='table'>`
-      + createList('9x9', this.settings.score.top9x9)
-      + createList('16x16', this.settings.score.top16x16)
-      + createList('16x30', this.settings.score.top16x30)
+      + createList('9x9', this.config.score.top9x9)
+      + createList('16x16', this.config.score.top16x16)
+      + createList('16x30', this.config.score.top16x30)
       + `</div>`;
     topElement.innerHTML = html;
     return topElement;
@@ -53,6 +53,6 @@ export class Menu {
   switchMenu = (position) => {
     this.mainElement.innerHTML = '';
     this.structure[position].forEach(button => this.mainElement.append(button));
-    if (this.settings.currentGame.isRun) this.mainElement.append(this.btn.backToGame);
+    if (this.config.currentGame.isRun) this.mainElement.append(this.btn.backToGame);
   }
 }

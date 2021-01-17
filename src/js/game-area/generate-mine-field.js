@@ -1,5 +1,5 @@
-export const generateMinefield = (settings) => {
-  const {size, minesCount} = settings;
+export const generateMinefield = (config) => {
+  const {size, minesCount} = config;
   const indexes = [];
   let arrLength = size.row * size.column;
   const flatArr = new Array(arrLength);
@@ -24,6 +24,6 @@ export const generateMinefield = (settings) => {
       ].filter(e => e === 'm').length;
     }
   }
-  settings.minefield = newMinefield;
-  return settings;
+  config.minefield = newMinefield;
+  return config;
 };

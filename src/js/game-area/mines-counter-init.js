@@ -1,7 +1,7 @@
 import { MinesCounter } from './header/mines-counter';
 
-export const minesCounterInit = (settings) => {
-  settings.currentGame.minesCounter = new MinesCounter(settings, 
-    settings.gameAreaHeaderElements.minesLeft);
-  return settings;
+export const minesCounterInit = (config) => {
+  config.currentGame.minesCounter = new MinesCounter(config, 
+    config.gameAreaHeaderElements.minesLeft);
+  return config;
 };

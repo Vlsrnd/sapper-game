@@ -1,8 +1,8 @@
-export const createAddScoreForm = (settings) => {
+export const createAddScoreForm = (config) => {
   const form = document.createElement('form');
   form.classList.add('add-score-form', 'invisible');
   form.innerHTML = '<div>CONGRATULATIONS!!!</div>'
-    + `<div>your result: ${settings.currentGame.timer.time}s</div>`;
+    + `<div>your result: ${config.currentGame.timer.time}s</div>`;
   const input = document.createElement('input');
   input.setAttribute('placeholder', 'your name');
   const button = document.createElement('button');

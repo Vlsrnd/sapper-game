@@ -1,13 +1,13 @@
 export class Timer {
-  constructor(settings, element) {
+  constructor(config, element) {
     this.time = 0;
-    this.settings = settings;
+    this.config = config;
     this.element = element;
     this.timerId = null;
   }
   start = () => {
-    if (this.settings.currentGame.isPaused) {
-      this.settings.currentGame.isPaused = false;
+    if (this.config.currentGame.isPaused) {
+      this.config.currentGame.isPaused = false;
       this.timerId = setTimeout(() => this.start(), 1000);
       return;
     }
@@ -20,7 +20,7 @@ export class Timer {
     this.timerId = setTimeout(() => this.start(), 1000);
   }
   pause = () => {
-    this.settings.currentGame.isPaused = true;
+    this.config.currentGame.isPaused = true;
     clearTimeout(this.timerId);
   }
   updateElement = () => {

@@ -1,14 +1,14 @@
 export class Cell {
-  constructor(position, value, settings) {
+  constructor(position, value, config) {
     this.x = position.x;
     this.y = position.y;
     this.value = value;
-    this.cellsCollection = settings.cells;
+    this.cellsCollection = config.cells;
     this.neighbors = [];
     this.element = this.create();
     this.isClosed = true;
     this.isFlagged = false;
-    this.mainSettings = settings;
+    this.mainSettings = config;
   }
   create = () => {
     const cellElement = document.createElement('div');

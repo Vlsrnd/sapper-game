@@ -1,15 +1,15 @@
 import { animationCreator } from './animation-creator';
 
-export const winAnimationStart = (settings, callback) => {
-  const firstPart = animationCreator(settings.firstPartCoord, 10, settings);
-  const secondPart = animationCreator(settings.secondPartCoord, 50, settings);
+export const winAnimationStart = (config, callback) => {
+  const firstPart = animationCreator(config.firstPartCoord, 10, config);
+  const secondPart = animationCreator(config.secondPartCoord, 50, config);
   firstPart();
   setTimeout(() => {
-    cancelAnimationFrame(settings.currentAnimation);
+    cancelAnimationFrame(config.currentAnimation);
     secondPart();
     setTimeout(() => {
       callback();
-      cancelAnimationFrame(settings.currentAnimation);
+      cancelAnimationFrame(config.currentAnimation);
     }, 500);
   }, 2000)
 };

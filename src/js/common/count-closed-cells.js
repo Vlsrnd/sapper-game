@@ -1,7 +1,7 @@
-export const countClosedCells = (settings) => {
-  settings.currentGame.closedMinesCount = Array
-    .from(settings.cells.values())
+export const countClosedCells = (config) => {
+  config.currentGame.closedMinesCount = Array
+    .from(config.cells.values())
     .filter(cell => cell.isClosed)
     .length;
-  return settings;
+  return config;
 };

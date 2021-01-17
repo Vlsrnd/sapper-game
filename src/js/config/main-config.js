@@ -1,4 +1,4 @@
-export const mainSettings = {
+export const mainConfig = {
   isWideResolution: true,
   rootElement: null,
   size: {

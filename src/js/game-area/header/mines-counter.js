@@ -1,7 +1,7 @@
 export class MinesCounter {
-  constructor(settings, element) {
-    this.win = settings.winFunction;
-    this.count = settings.minesCount;
+  constructor(config, element) {
+    this.win = config.winFunction;
+    this.count = config.minesCount;
     this.element = element;
     this.updateElement();
   }
