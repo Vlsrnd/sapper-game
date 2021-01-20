@@ -1,3 +1,5 @@
+import { shuffleArray } from "./shuffle-array";
+
 export const generateMinefield = (config) => {
   const {size, minesCount} = config;
   const indexes = [];
@@ -6,7 +8,7 @@ export const generateMinefield = (config) => {
   while (arrLength > 0) {
     indexes.push(--arrLength);
   };
-  const minesIndexes = indexes.sort(() => Math.random() - 0.5);
+  const minesIndexes = shuffleArray(indexes);
   minesIndexes.length = minesCount;
   flatArr.fill(0);
   minesIndexes.forEach(i => flatArr[i] = 'm');
