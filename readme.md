@@ -1,7 +1,8 @@
 <h1 align="center">The minesweeper</h1>
 <p align="center">https://vlsrnd.github.io/sapper-game/</p>
+
 <p align="center">
-<img src="https://drive.google.com/uc?export=view&id=1GYQJuKU-EVpskxCc8y_FJ5w7I5G50b8f" alt="game">
+<img src="https://i.ibb.co/W5wnfrk/sapper-game-preview.png" alt="game">
 </p>
 
 What was used:
